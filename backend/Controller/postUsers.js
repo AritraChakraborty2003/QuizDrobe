@@ -14,7 +14,7 @@ const postUser = () => {
     });
 
     user.save();
-    console.log("user Created");
+    return res.status(200).send({ status: 200 });
   };
 };
 export { postUser };
