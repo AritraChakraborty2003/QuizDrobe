@@ -4,5 +4,5 @@ import { getUsers } from "../Controller/getUsers.js";
 const userRouter = express.Router();
 
 userRouter.get("/", getUsers);
-userRouter.post("/", postUser);
+userRouter.post("/", postUser());
 export { userRouter };

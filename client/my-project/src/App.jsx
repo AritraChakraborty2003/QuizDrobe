@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-
+import axios from "axios";
 function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -25,15 +25,30 @@ function App() {
 
   const onSubmitHandle = (e) => {
     e.preventDefault();
-    console.log(name);
+    /*console.log(name);
     console.log(email);
     console.log(designation);
-    console.log(password);
+    console.log(password);*/
+
+    const config = {
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    };
+
+    axios
+      .post("http://127.0.0.1:8000/api/users", {
+        name: name,
+        email: email,
+        designation: designation,
+        password: password,
+      })
+      .then((response) => console.log(response.data))
+      .catch((error) => console.log(error));
   };
 
   return (
     <>
-      <form className="form" id="sform">
+      <h1 id="success"></h1>
+      <form className="form" id="form">
         <input
           type="text"
           placeholder="Enter your name..."
