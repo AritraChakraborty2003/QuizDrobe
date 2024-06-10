@@ -1,0 +1,11 @@
+* {
+  overflow-x: hidden;
+}
+input {
+  background-color: #e8f2fd;
+  padding: 2vmin;
+}
+textarea:focus,
+input:focus {
+  outline: none;
+}

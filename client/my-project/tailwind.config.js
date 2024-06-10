@@ -19,6 +19,7 @@ export default {
       feedbackbody: "#F7FAFF",
       textcounter: "#737373",
       timerText: "#FF0000",
+      lightgrey: "#F4F5F7",
     },
     fontFamily: {
       oxygen: ["Oxygen"],
