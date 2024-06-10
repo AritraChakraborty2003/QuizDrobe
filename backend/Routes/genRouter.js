@@ -1,7 +1,7 @@
 import express from "express";
-import { getUsers } from "../Controller/getUsers.js";
+import { generateRandom } from "../Controller/getUsers.js";
 const genRouter = express.Router();
 
-genRouter.get("/", getUsers);
+genRouter.get("/", generateRandom);
 
 export { genRouter };

@@ -10,9 +10,9 @@ GET api/score - Get List of all users with scores overall
 GET api/score/email - Get score of user with email=email
 GET api/score/round - Get score of a specfic round
 
-POST api/user - POST data of user
-POST api/feedback/user - POST feedback of user
-POST api/user/score/round - POST score of user in a round
+POST api/users/ - POST data of user
+POST api/feedback/users - POST feedback of user
+POST api/users/score/round - POST score of user in a round
 POST api/questionId/round - POST questions for a round
 POST api/round/Timing - POST round and timing for qui
 

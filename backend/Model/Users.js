@@ -1,4 +1,4 @@
-import mongoose, { Collection } from "mongoose";
+import mongoose from "mongoose";
 
 const usersSchema = mongoose.Schema(
   {
@@ -22,4 +22,5 @@ const usersSchema = mongoose.Schema(
   { Collection: "users" }
 );
 
-const user = mongoose.model("users", usersSchema);
+const users = mongoose.model("users", usersSchema);
+export { users };
