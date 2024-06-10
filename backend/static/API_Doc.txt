@@ -1,0 +1,23 @@
+APIs
+
+GET api/users/ - Get List of all users
+GET api/users/email - Get user with email=email
+GET api/users/name - Get user with name=name
+GET api/feedback/ - Get List of feedback
+GET api/feedback/email  - Get feedback with email=email
+GET api/feedback/name - Get feedback with name=name
+GET api/score - Get List of all users with scores overall
+GET api/score/email - Get score of user with email=email
+GET api/score/round - Get score of a specfic round
+
+POST api/user - POST data of user
+POST api/feedback/user - POST feedback of user
+POST api/user/score/round - POST score of user in a round
+POST api/questionId/round - POST questions for a round
+POST api/round/Timing - POST round and timing for qui
+
+
+PATCH api/questionId/round - DELETE a question with questionId=questionId
+
+
+DELETE api/questionId/round - DELETE a question with questionId=questionId
