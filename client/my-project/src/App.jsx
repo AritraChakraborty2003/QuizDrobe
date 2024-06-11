@@ -4,6 +4,7 @@ import Signup from "./components/Signup";
 import Rules from "./components/Rules";
 import Login from "./components/Login";
 import Feedback from "./components/Feedback";
+import QuizBody from "./components/QuizBody";
 function App() {
   return (
     <>
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/rules" element={<Rules />}></Route>
+          <Route path="/quizBody" element={<QuizBody />}></Route>
           <Route path="/feedback" element={<Feedback />}></Route>
         </Routes>
       </BrowserRouter>

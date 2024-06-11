@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import "./main.css";
 import { useNavigate, Navigate, useLocation } from "react-router-dom";
 const Rules = () => {
