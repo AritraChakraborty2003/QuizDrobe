@@ -18,6 +18,10 @@ const usersSchema = mongoose.Schema(
       type: String,
       require: true,
     },
+    round: {
+      type: Number,
+      require: true,
+    },
   },
   { Collection: "users" }
 );

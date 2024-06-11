@@ -41,6 +41,7 @@ const Signup = () => {
           email: email,
           designation: designation,
           password: password,
+          round: 1,
         })
         .then((response) => {
           if (response.data.status === 200) {
@@ -59,9 +60,9 @@ const Signup = () => {
     <>
       <div className="pb-10 bg-background main w-[100vw] flex justify-center items-center">
         <div className="flex flex-col justify-center items-center mt-6">
-          <div className="box mt-[7vmin] md:mt-4 bg-lightgrey md:w-[47vmin] w-[75vw] flex flex-col justify-center items-center p-2">
-            <div className="bg-white flex flex-col justify-center items-center y md:w-[41vmin] w-[67vw]">
-              <p className="text-maintext  lg:text-[5vmin] text-[8vmin] font-medium font-roboto bg-white ">
+          <div className="box mt-[7vmin] md:mt-4 bg-lightgrey md:w-[54vmin] w-[75vw] flex flex-col justify-center items-center p-2">
+            <div className="bg-white flex flex-col justify-center items-center y md:w-[50vmin] w-[67vw]">
+              <p className="text-maintext  lg:text-[7vmin] text-[8vmin] font-medium font-roboto bg-white ">
                 QuizDrobe
               </p>
               <p className="bg-white text-bodytext">
@@ -73,7 +74,7 @@ const Signup = () => {
               </p>
             </div>
           </div>
-          <p className="text-bodytext text-[10vmin] md:text-[6vmin] mt-6">
+          <p className="text-bodytext text-[10vmin] md:text-[8vmin] mt-6">
             Welcome!
           </p>
           <form
@@ -85,7 +86,7 @@ const Signup = () => {
               placeholder="Enter your name..."
               name="name"
               id="name"
-              className="p-2 w-[80vw] md:w-[60vmin] border-bodytext border-b-2"
+              className="p-2 w-[80vw] md:w-[77vmin] border-bodytext border-b-2"
               onChange={onChangename}
             />
             <input
@@ -93,7 +94,7 @@ const Signup = () => {
               placeholder="Enter your email..."
               name="email"
               id="email"
-              className="p-2 w-[80vw] md:w-[60vmin] border-bodytext border-b-2"
+              className="p-2 w-[80vw] md:w-[77vmin] border-bodytext border-b-2"
               onChange={onChangeemail}
             />
             <input
@@ -101,15 +102,15 @@ const Signup = () => {
               name="designation"
               id="designation"
               placeholder="Enter your designation..."
-              className="p-2 w-[80vw] md:w-[60vmin] border-bodytext border-b-2"
+              className="p-2 w-[80vw] md:w-[77vmin] border-bodytext border-b-2"
               onChange={onChangedesig}
             />
-            <div className="flex space-x-2 w-[80vw] md:w-[60vmin] border-bodytext border-b-2">
+            <div className="flex space-x-2 w-[80vw] md:w-[77vmin] border-bodytext border-b-2">
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
-                className="p-2 w-[70vw] md:w-[55vmin] "
+                className="p-2 w-[70vw] md:w-[73vmin] "
                 placeholder="Enter your password..."
                 onChange={onChangepassword}
               />
@@ -129,12 +130,12 @@ const Signup = () => {
                 }}
               ></img>
             </div>
-            <div className="flex space-x-2  w-[80vw] md:w-[60vmin] border-bodytext border-b-2">
+            <div className="flex space-x-2  w-[80vw] md:w-[77vmin] border-bodytext border-b-2">
               <input
                 name="cnfpassword"
                 type={showPassword1 ? "text" : "password"}
                 id="cnfpassword"
-                className="p-2 w-[70vw] md:w-[55vmin] "
+                className="p-2 w-[70vw] md:w-[73vmin] "
                 placeholder="Confirm your password..."
                 onChange={onChangecnfpassword}
               />

@@ -5,12 +5,14 @@ const postUser = () => {
     const email = req.body.email;
     const designation = req.body.designation;
     const password = req.body.password;
+    const round = req.body.round;
 
     const user = new users({
       name: name,
       email: email,
       designation: designation,
       password: password,
+      round: round,
     });
 
     user.save();
