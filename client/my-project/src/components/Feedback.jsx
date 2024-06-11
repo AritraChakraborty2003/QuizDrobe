@@ -1,5 +1,14 @@
+/* eslint-disable no-unused-vars */
+import { useLocation } from "react-router-dom";
 import "./main.css";
+import { useState } from "react";
 const Feedback = () => {
+  const location = useLocation();
+  console.log(
+    `Hello ${location.state.userData.name} with email ${location.state.userData.email} your score is: `,
+    location.state.userScore
+  );
+
   return (
     <div className="mainBody w-[100vw] h-[100vh] flex justify-center items-center">
       <div className="feedbackArea">

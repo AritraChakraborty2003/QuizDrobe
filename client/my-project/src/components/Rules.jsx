@@ -1,10 +1,25 @@
 /* eslint-disable no-unused-vars */
 import "./main.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { useNavigate, Navigate, useLocation } from "react-router-dom";
 const Rules = () => {
-  const location = useLocation();
-  const data = location.state.data;
+  const navigate = useNavigate();
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/questions/")
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   console.log(data);
+  const location = useLocation();
+  const userData = location.state.data;
+  console.log(userData);
   return (
     <>
       {(localStorage.getItem("loggedin") === "true" && (
@@ -46,7 +61,14 @@ const Rules = () => {
               </li>
             </ul>
           </div>
-          <button className="bg-bodytext text-white flex justify-center items-center p-1 w-[30vmin] md:w-[27vmin] rounded-2xl text-[6vmin] md:text-[3vmin] mt-4">
+          <button
+            className="bg-bodytext text-white flex justify-center items-center p-1 w-[30vmin] md:w-[27vmin] rounded-2xl text-[6vmin] md:text-[3vmin] mt-4"
+            onClick={() => {
+              navigate("/QuizBody", {
+                state: { userData: userData, qdata: data },
+              });
+            }}
+          >
             next
           </button>
         </div>

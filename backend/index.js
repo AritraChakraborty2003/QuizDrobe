@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import { logResReq } from "./Middlewares/logResReq.js";
 import { genRouter } from "./Routes/genRouter.js";
 import { userRouter } from "./Routes/usersRouter.js";
+import { questionsRouter } from "./Routes/questionRouter.js";
 import DBConnectFunction from "./Connection/DbConnect.js";
 dotenv.config();
 
@@ -16,6 +17,7 @@ DBConnectFunction(`${process.env.MONGODB_URI}`);
 app.use(logResReq("log.txt"));
 app.use("/", genRouter);
 app.use("/api/users", userRouter);
+app.use("/api/questions", questionsRouter);
 
 app.listen(`${process.env.PORT}`, () => {
   console.log("Backend Connected");
