@@ -58,11 +58,20 @@ const Signup = () => {
   return (
     <>
       <div className="pb-10 bg-background main w-[100vw] flex justify-center items-center">
-        <div className="flex flex-col justify-center items-center">
-          <div className="box mt-[7vmin] md:mt-4 bg-lightgrey md:w-[47vmin] w-[75vw] flex justify-center items-center p-2">
-            <p className="text-maintext  lg:text-[5vmin] text-[8vmin] font-medium font-roboto bg-white pt-2 pb-2 pl-4 pr-4 ">
-              Venturedrobe
-            </p>
+        <div className="flex flex-col justify-center items-center mt-6">
+          <div className="box mt-[7vmin] md:mt-4 bg-lightgrey md:w-[47vmin] w-[75vw] flex flex-col justify-center items-center p-2">
+            <div className="bg-white flex flex-col justify-center items-center y md:w-[41vmin] w-[67vw]">
+              <p className="text-maintext  lg:text-[5vmin] text-[8vmin] font-medium font-roboto bg-white ">
+                QuizDrobe
+              </p>
+              <p className="bg-white text-bodytext">
+                (powered By{" "}
+                <span className="font-medium text-bodytext bg-white">
+                  VentureDrobe
+                </span>
+                )
+              </p>
+            </div>
           </div>
           <p className="text-bodytext text-[10vmin] md:text-[6vmin] mt-6">
             Welcome!
@@ -161,7 +170,7 @@ const Signup = () => {
             </p>
           </form>
 
-          <p className="mt-10  text-[4vmin] md:text-[2vmin] font-oxygen pb-2">
+          <p className="mt-10  text-[3.45vmin] md:text-[2vmin] font-oxygen pb-2">
             www.venturedrobe.in
           </p>
         </div>
