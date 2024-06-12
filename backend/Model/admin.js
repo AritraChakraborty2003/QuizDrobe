@@ -2,11 +2,6 @@ import mongoose from "mongoose";
 
 const adminSchema = mongoose.Schema(
   {
-    id: {
-      type: Number,
-      require: true,
-    },
-
     name: {
       type: String,
       require: true,

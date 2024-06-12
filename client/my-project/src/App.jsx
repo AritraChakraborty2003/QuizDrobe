@@ -6,12 +6,16 @@ import CmsLogin from "./components/CmsLogin";
 import Login from "./components/Login";
 import Feedback from "./components/Feedback";
 import QuizBody from "./components/QuizBody";
+import Cms from "./components/Cms";
+import Addadmin from "./components/AddAdmin";
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
+          <Route path="/AddAdmin" element={<Addadmin />}></Route>
           <Route path="/" element={<Signup />}></Route>
+          <Route path="/Cms" element={<Cms />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/rules" element={<Rules />}></Route>
           <Route path="/quizBody" element={<QuizBody />}></Route>

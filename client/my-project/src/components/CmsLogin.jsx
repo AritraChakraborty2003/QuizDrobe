@@ -27,7 +27,7 @@ const CmsLogin = () => {
         console.log(err);
       });
   }, []);
-
+  console.log(data);
   const onChangeemail = (e) => {
     setEmail(e.target.value);
   };
@@ -42,12 +42,13 @@ const CmsLogin = () => {
     data.map((val) => {
       if (val.email === email && val.password === password) {
         control = true;
+        console.log("hello");
         const name = val.name;
         localStorage.setItem("email", email);
         localStorage.setItem("password", password);
         localStorage.setItem("name", name);
-        localStorage.setItem("loggedin", true);
-        navigate("/rules", { state: { data: val } });
+        localStorage.setItem("loggedinadmin", "true");
+        navigate("/Cms", { state: { data: val } });
       }
     });
     if (!control) {
@@ -57,26 +58,14 @@ const CmsLogin = () => {
 
   return (
     <>
-      {console.log(round)}
-      <div className="pb-10 bg-background main pb-2 w-[100vw] flex justify-center items-center">
+      <div className=" bg-background main pb-2 w-[100vw] flex justify-center items-center">
         <div className="flex flex-col justify-center items-center">
           <form
             id="form"
             className="flex flex-col justify-center items-center mt-6 space-y-7"
           >
-            <div className="box mt-[7vmin] md:mt-4 bg-lightgrey md:w-[47vmin] w-[77vw] flex flex-col justify-center items-center p-2">
-              <div className="bg-white flex flex-col justify-center items-center y md:w-[41vmin] w-[74vw]">
-                <p className="text-maintext  lg:text-[5vmin] text-[8vmin] font-medium font-roboto bg-white ">
-                  QuizDrobe
-                </p>
-                <p className="bg-white text-bodytext">
-                  (powered By{" "}
-                  <span className="font-medium text-bodytext bg-white">
-                    VentureDrobe
-                  </span>
-                  )
-                </p>
-              </div>
+            <div className="box mt-[7vmin] md:mt-4 h-[27vmin] md:w-[65vmin] w-[77vw] flex flex-col justify-center items-center p-2">
+              <img src="./VDIcon1.png"></img>
             </div>
 
             <p className="text-[6vmin] text-bodytext font-medium mt-10">
