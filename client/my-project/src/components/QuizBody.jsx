@@ -10,8 +10,13 @@ const QuizBody = () => {
   const qData = location.state.qdata;
   console.log(userData);
   console.log(qData);
-  const [time, setTime] = useState(10);
+  const [time, setTime] = useState(1000);
   const [score, setScore] = useState(0);
+  const correctAns = [];
+  qData.map((question) => {
+    correctAns.push(question.correct);
+  });
+  console.log(correctAns);
   useEffect(() => {
     //Implementing the setInterval method
 
@@ -43,23 +48,23 @@ const QuizBody = () => {
           </div>
 
           <div className="mainArea h-[90vh] md:mt-5 flex flex-col md:justify-center  md:items-center justify-center ml-2">
-            <div className="qArea w-[90vw] md:w-[67vmin] ] ml-3 border-[#939494] border-2 p-3 md:p-4 rounded-[4vmin]">
-              <p className="text-[4.56vmin] md:text-[3.75vmin] font-roboton text-quiztext font-medium lg:font-semibold">
+            <div className="bg-feedbackbody qArea w-[90vw] md:w-[67vmin] ] ml-3 border-[#939494] border-2 p-3 md:p-4 rounded-[4vmin]">
+              <p className="bg-feedbackbody text-[4.56vmin] md:text-[3.75vmin] font-roboton text-quiztext font-medium lg:font-semibold pb-1">
                 Q. {qData[0].question} ?
               </p>
             </div>
             <div className="optionArea">
               <div className="space-y-3 mt-5 ">
-                <div className="text-[4vmin] md:text-[3vmin] lg:text-[2.5vmin] w-[90vw] ml-3 md:w-[65vmin] border-[#cbcbcb] border-2 p-2 text-quiztext font-medium rounded-[2vmin]">
+                <div className="bg-[#F7FAFF] text-[4vmin] md:text-[3vmin]  p-[2.35vmin] lg:text-[2.5vmin] w-[90vw] ml-3 md:w-[65vmin] border-[#cbcbcb] border-2  md:p-[1.5vmin] text-quiztext font-medium rounded-[6vmin]">
                   1. {qData[0].option1}
                 </div>
-                <div className="text-[4vmin] md:text-[3vmin] lg:text-[2.5vmin] w-[90vw] ml-3 md:w-[65vmin] border-[#cbcbcb] border-2 p-2 text-quiztext font-medium rounded-[2vmin]">
+                <div className="bg-[#F7FAFF] text-[4vmin] md:text-[3vmin] lg:text-[2.5vmin] w-[90vw] ml-3 md:w-[65vmin] border-[#cbcbcb] border-2  p-[2.35vmin] md:p-[1.5vmin] text-quiztext font-medium rounded-[6vmin]">
                   2. {qData[0].option2}
                 </div>
-                <div className="text-[4vmin] md:text-[3vmin] lg:text-[2.5vmin] w-[90vw] ml-3 md:w-[65vmin] border-[#cbcbcb] border-2 p-2 text-quiztext font-medium rounded-[2vmin]">
+                <div className="bg-[#F7FAFF] text-[4vmin] md:text-[3vmin] lg:text-[2.5vmin] w-[90vw] ml-3 md:w-[65vmin] border-[#cbcbcb] border-2  p-[2.35vmin]  md:p-[1.5vmin] text-quiztext font-medium rounded-[6vmin]">
                   3. {qData[0].option3}
                 </div>
-                <div className="text-[4vmin] md:text-[3vmin] lg:text-[2.5vmin] w-[90vw] ml-3 md:w-[65vmin] border-[#cbcbcb] border-2 p-2 text-quiztext font-medium rounded-[2vmin]">
+                <div className="bg-[#F7FAFF] text-[4vmin] md:text-[3vmin] lg:text-[2.5vmin] w-[90vw] ml-3 md:w-[65vmin] border-[#cbcbcb] border-2 p-[2.35vmin] md:p-[1.5vmin] text-quiztext font-medium rounded-[6vmin]">
                   4. {qData[0].option4}
                 </div>
               </div>

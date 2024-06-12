@@ -1,4 +1,5 @@
 import express from "express";
+import { adminRouter } from "./Routes/adminRouter.js";
 import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
@@ -18,6 +19,7 @@ app.use(logResReq("log.txt"));
 app.use("/", genRouter);
 app.use("/api/users", userRouter);
 app.use("/api/questions", questionsRouter);
+app.use("/api/admin", adminRouter);
 
 app.listen(`${process.env.PORT}`, () => {
   console.log("Backend Connected");

@@ -59,7 +59,7 @@ const Login = () => {
   return (
     <>
       {console.log(round)}
-      <div className="pb-10 bg-background main h-[100vh] w-[100vw] flex justify-center items-center">
+      <div className="pb-10 bg-background main pb-2 w-[100vw] flex justify-center items-center">
         <div className="flex flex-col justify-center items-center">
           <form
             id="form"
@@ -79,7 +79,10 @@ const Login = () => {
                 </p>
               </div>
             </div>
-            <p className="text-[6vmin] text-bodytext font-medium">Log In...</p>
+
+            <p className="text-[6vmin] text-bodytext font-medium mt-10">
+              Log In...
+            </p>
             <input
               type="email"
               placeholder="Enter your email..."

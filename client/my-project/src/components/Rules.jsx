@@ -33,7 +33,8 @@ const Rules = () => {
               </li>
               <li className="flex flex-col space-y-4 ml-3 mt-4 bg-rulebody">
                 <li className="bg-rulebody">
-                  1. Each Question of the quiz carries 10 marks
+                  1. Each Question of the quiz carries 10 marks and no negative
+                  marking
                 </li>
                 <li className="bg-rulebody">
                   2. Winners will recieve certificates and goodies from
