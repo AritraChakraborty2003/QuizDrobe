@@ -67,98 +67,99 @@ const Signup = () => {
           <p className="text-bodytext text-[10vmin] md:text-[8vmin] mt-1">
             Welcome!
           </p>
-          <form
-            id="form"
-            className="flex flex-col justify-center items-center mt-6 space-y-7"
-          >
-            <input
-              type="text"
-              placeholder="Enter your name..."
-              name="name"
-              id="name"
-              className="p-2 w-[80vw] md:w-[87vmin] border-bodytext border-b-2"
-              onChange={onChangename}
-            />
-            <input
-              type="email"
-              placeholder="Enter your email..."
-              name="email"
-              id="email"
-              className="p-2 w-[80vw] md:w-[87vmin] border-bodytext border-b-2"
-              onChange={onChangeemail}
-            />
-            <input
-              type="text"
-              name="designation"
-              id="designation"
-              placeholder="Enter your designation..."
-              className="p-2 w-[80vw] md:w-[87vmin] border-bodytext border-b-2"
-              onChange={onChangedesig}
-            />
-            <div className="flex space-x-2 w-[80vw] md:w-[87vmin] border-bodytext border-b-2">
+          <form id="form">
+            <div className="flex flex-wrap justify-center items-center mt-6 gap-x-5 gap-y-6">
               <input
-                type={showPassword ? "text" : "password"}
-                name="password"
-                id="password"
-                className="p-2 w-[70vw] md:w-[84vmin] "
-                placeholder="Enter your password..."
-                onChange={onChangepassword}
+                type="text"
+                placeholder="Enter your name..."
+                name="name"
+                id="name"
+                className="p-2 w-[80vw] md:w-[87vmin] border-bodytext border-b-2"
+                onChange={onChangename}
               />
-              <img
-                src="./rp.png"
-                id="showicon"
-                height={50}
-                width={50}
-                onClick={() => {
-                  if (showPassword === false) {
-                    setShowPassword(true);
-                    document.getElementById("showicon").src = "./sp.png";
-                  } else {
-                    setShowPassword(false);
-                    document.getElementById("showicon").src = "./rp.png";
-                  }
-                }}
-              ></img>
-            </div>
-            <div className="flex space-x-2  w-[80vw] md:w-[87vmin] border-bodytext border-b-2">
               <input
-                name="cnfpassword"
-                type={showPassword1 ? "text" : "password"}
-                id="cnfpassword"
-                className="p-2 w-[70vw] md:w-[84vmin] "
-                placeholder="Confirm your password..."
-                onChange={onChangecnfpassword}
+                type="email"
+                placeholder="Enter your email..."
+                name="email"
+                id="email"
+                className="p-2 w-[80vw] md:w-[87vmin] border-bodytext border-b-2"
+                onChange={onChangeemail}
               />
-              <img
-                src="./rp.png"
-                id="showicon1"
-                height={50}
-                width={50}
-                onClick={() => {
-                  if (showPassword1 === false) {
-                    setShowPassword1(true);
-                    document.getElementById("showicon1").src = "./sp.png";
-                  } else {
-                    setShowPassword1(false);
-                    document.getElementById("showicon1").src = "./rp.png";
-                  }
-                }}
-              ></img>
+              <input
+                type="text"
+                name="designation"
+                id="designation"
+                placeholder="Enter your designation..."
+                className="p-2 w-[80vw] md:w-[87vmin] border-bodytext border-b-2"
+                onChange={onChangedesig}
+              />
+              <div className="flex space-x-2 w-[80vw] md:w-[87vmin] border-bodytext border-b-2">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  id="password"
+                  className="p-2 w-[70vw] md:w-[84vmin] "
+                  placeholder="Enter your password..."
+                  onChange={onChangepassword}
+                />
+                <img
+                  src="./rp.png"
+                  id="showicon"
+                  height={50}
+                  width={50}
+                  onClick={() => {
+                    if (showPassword === false) {
+                      setShowPassword(true);
+                      document.getElementById("showicon").src = "./sp.png";
+                    } else {
+                      setShowPassword(false);
+                      document.getElementById("showicon").src = "./rp.png";
+                    }
+                  }}
+                ></img>
+              </div>
+              <div className="flex space-x-2  w-[80vw] md:w-[87vmin] border-bodytext border-b-2">
+                <input
+                  name="cnfpassword"
+                  type={showPassword1 ? "text" : "password"}
+                  id="cnfpassword"
+                  className="p-2 w-[70vw] md:w-[84vmin] "
+                  placeholder="Confirm your password..."
+                  onChange={onChangecnfpassword}
+                />
+                <img
+                  src="./rp.png"
+                  id="showicon1"
+                  height={50}
+                  width={50}
+                  onClick={() => {
+                    if (showPassword1 === false) {
+                      setShowPassword1(true);
+                      document.getElementById("showicon1").src = "./sp.png";
+                    } else {
+                      setShowPassword1(false);
+                      document.getElementById("showicon1").src = "./rp.png";
+                    }
+                  }}
+                ></img>
+              </div>
             </div>
-            <button
-              className="bg-black  bg-buttonColor flex justify-center items-center
+            <div className="w-[100vw] flex  flex-col gap-y-3 lg:gap-y-4 justify-center items-center">
+              <button
+                className="mt-2 lg:mt-3 bg-black  bg-buttonColor flex justify-center items-center
               w-[70vw] lg:w-[20vw] p-3 text-maintext font-medium rounded-2xl "
-              onClick={onSubmitHandle}
-            >
-              Create Account
-            </button>
+                onClick={onSubmitHandle}
+              >
+                Create Account
+              </button>
 
-            <p className="text-bodytext font-medium mt-5">
-              Have an Account?...
-              <span className="text-maintext font-bold">
-                <a href="/login">Login</a>
-              </span>
-            </p>
+              <p className="text-bodytext font-medium mt-5">
+                Have an Account?...
+                <span className="text-maintext font-bold">
+                  <a href="/login">Login</a>
+                </span>
+              </p>
+            </div>
           </form>
 
           <p className="mt-10  text-[3.45vmin] md:text-[2vmin] font-oxygen pb-2">
