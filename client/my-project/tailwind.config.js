@@ -9,6 +9,7 @@ export default {
       buttonColor: "#F7FAFF",
       ruleButtonColor: "#49688D",
       rulebody: "#F7FAFF",
+      backQuiz: "#c5ddff",
       ruleborder: "#49688D",
       white: "#fff",
       timerBody: "#49688D",
