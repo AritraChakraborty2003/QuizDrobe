@@ -63,13 +63,13 @@ const Signup = () => {
   return (
     <>
       <div className="LargeDisplayArea hidden lg:block ">
-        <div className="flex justify-center">
+        <div className="flex justify-center pb-2">
           <div className="flex justify-center items-center mt-[2vh] bg-backQuiz rounded-[3vmin] w-[98vw]">
             <div className="logoPart w-[44vw] h-[96vh]   font-roboto flex flex-col justify-center items-center">
               <img src="./VD11.png"></img>
             </div>
-            <div className="formPart flex flex-col justify-center items-start w-[54vw]  h-[96vh]   font-roboto ">
-              <p className="text-center text-[12vmin] md:text-[10vmin] text-bodytext font-medium mt-[6vmin]">
+            <div className="formPart flex flex-col justify-center items-start w-[54vw]    font-roboto mt-6">
+              <p className="text-center text-[12vmin]  md:text-[10vmin] text-bodytext font-medium overflow-hidden">
                 Welcome...
               </p>
 
@@ -81,7 +81,7 @@ const Signup = () => {
                       placeholder="Enter your name..."
                       name="name"
                       id="name"
-                      className="bg-white rounded-[2.5vmin]  p-3 w-[80vw] md:w-[77vmin] border-bodytext border-b-[4px]"
+                      className="bg-white rounded-[2.5vmin]  p-2 w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]"
                       onChange={onChangename}
                     />
                     <input
@@ -89,7 +89,7 @@ const Signup = () => {
                       placeholder="Enter your email..."
                       name="email"
                       id="email"
-                      className="bg-white rounded-[2.5vmin]  p-3 w-[80vw] md:w-[77vmin] border-bodytext border-b-[4px]"
+                      className="bg-white rounded-[2.5vmin]  p-2 w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]"
                       onChange={onChangeemail}
                     />
                     <input
@@ -97,15 +97,15 @@ const Signup = () => {
                       name="designation"
                       id="designation"
                       placeholder="Enter your designation..."
-                      className="bg-white rounded-[2.5vmin] p-3 w-[80vw] md:w-[77vmin] border-bodytext border-b-[4px]"
+                      className="bg-white rounded-[2.5vmin] p-2 w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]"
                       onChange={onChangedesig}
                     />
-                    <div className="bg-white rounded-[2.5vmin] flex space-x-2 w-[80vw] md:w-[77vmin] border-bodytext border-b-[4px]">
+                    <div className="bg-white rounded-[2.5vmin] flex space-x-2 w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]">
                       <input
                         type={showPassword ? "text" : "password"}
                         name="password"
                         id="password"
-                        className="bg-white rounded-[2.5vmin] p-3 w-[70vw] md:w-[77vmin] "
+                        className="bg-white rounded-[2.5vmin] p-2 w-[70vw] md:w-[44vw] "
                         placeholder="Enter your password..."
                         onChange={onChangepassword}
                       />
@@ -127,12 +127,12 @@ const Signup = () => {
                         }}
                       ></img>
                     </div>
-                    <div className="bg-white rounded-[2.5vmin] flex space-x-2  w-[80vw] md:w-[77vmin] border-bodytext border-b-[4px]">
+                    <div className="bg-white rounded-[2.5vmin] flex space-x-2  w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]">
                       <input
                         name="cnfpassword"
                         type={showPassword1 ? "text" : "password"}
                         id="cnfpassword"
-                        className="p-3 w-[70vw] md:w-[84vmin] bg-white rounded-[2.5vmin]  "
+                        className="p-2 w-[70vw] md:w-[84vmin] bg-white rounded-[2.5vmin]  "
                         placeholder="Confirm your password..."
                         onChange={onChangecnfpassword}
                       />
@@ -185,14 +185,14 @@ const Signup = () => {
       <div className="block lg:hidden">
         <div className="md:h-[100vh] bg-gradient-to-bl from-[#9ed8ff] to-backQuiz  lg:bg-gradient-to-tr lg:from-background lg:to-background font-roboto main w-[100vw] flex justify-center items-center">
           <div className="flex flex-col justify-center items-center mt-1">
-            <div className="mt-4 from-background to-backQuiz  lg:bg-gradient-to-tl lg:from-background lg:to-background font-roboto box  md:mt-4 h-[42vmin] md:h-[30vmin] md:w-[65vmin] w-[85vw] flex flex-col justify-center items-center p-2">
+            <div className="mt-4 from-background to-backQuiz   lg:bg-gradient-to-tl lg:from-background lg:to-background font-roboto box  md:mt-4 h-[42vmin] md:h-[30vmin] md:w-[65vmin] w-[85vw] flex flex-col justify-center items-center p-2">
               <img
                 src="./VDIcon1.png"
                 className="max-w-full max-h-full object-contain"
               ></img>
             </div>
 
-            <p className="text-[12vmin] md:text-[6vmin] text-bodytext font-medium mt-3">
+            <p className="text-[12vmin] md:text-[6vmin]  text-bodytext font-medium mt-3">
               Welcome...
             </p>
             <form id="form">
@@ -281,7 +281,7 @@ const Signup = () => {
                   Create Account
                 </button>
 
-                <p className="text-bodytext font-medium mt-2">
+                <p className="text-bodytext font-medium mt-1">
                   Have an Account?...
                   <span className="text-maintext font-bold">
                     <a href="/login">Login</a>
@@ -290,7 +290,7 @@ const Signup = () => {
               </div>
             </form>
 
-            <p className="mt-10  text-[3.45vmin] md:text-[2vmin] font-oxygen pb-2">
+            <p className="mt-1  text-[3.45vmin] md:text-[2vmin] font-oxygen pb-2">
               www.venturedrobe.in
             </p>
           </div>
