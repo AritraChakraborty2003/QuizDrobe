@@ -16,7 +16,7 @@ const PostQuestions = () => {
       question: question,
       option1: opt1,
       option2: opt2,
-      option2: opt3,
+      option3: opt3,
       option4: opt4,
       correct: correct,
     });

@@ -19,6 +19,9 @@ const Rules = () => {
   console.log(data);
   const location = useLocation();
   const userData = location.state.data;
+  const round = userData.round;
+  const qData = data.filter((val) => val.round == 1);
+  console.log(qData);
   console.log(userData);
   return (
     <>
@@ -68,7 +71,7 @@ const Rules = () => {
                   className="bg-bodytext text-white flex justify-center items-center p-1 w-[30vmin] md:w-[27vmin] rounded-2xl text-[6vmin] md:text-[3vmin] mt-4"
                   onClick={() => {
                     navigate("/QuizBody", {
-                      state: { userData: userData, qdata: data },
+                      state: { userData: userData, qdata: qData },
                     });
                   }}
                 >

@@ -22,7 +22,7 @@ app.use("/api/users", userRouter);
 app.use("/api/questions", questionsRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/rounds/", roundsRouter);
-app.use("/api/questions/", questionsRouter);
+
 app.listen(`${process.env.PORT}`, () => {
   console.log("Backend Connected");
 });

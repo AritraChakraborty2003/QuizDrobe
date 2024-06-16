@@ -7,14 +7,15 @@ const AddQuestions = () => {
   const onSubmitHandle = (e) => {
     e.preventDefault();
     const round = document.getElementById("round").value;
-    const opt1 = docment.getElementById("opt1").value;
+    const opt1 = document.getElementById("opt1").value;
     const opt2 = document.getElementById("opt2").value;
     const opt3 = document.getElementById("opt3").value;
     const opt4 = document.getElementById("opt4").value;
     const correct = document.getElementById("correct").value;
     const question = document.getElementById("question").value;
+
     axios
-      .post("http://127.0.0.1:8000/api/questions/", {
+      .post("http://127.0.0.1:8000/api/questions", {
         round: round,
         opt1: opt1,
         opt2: opt2,
@@ -24,18 +25,15 @@ const AddQuestions = () => {
         question: question,
       })
       .then((res) => {
-        if (res.status.data === 200) {
+        if (res.data.status === 200) {
           document.getElementById("success").innerHTML =
             "Uploaded Successfully";
         }
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => console.log(err));
   };
   return (
     <>
-      <h1 id="success text-4xl pb-2"></h1>
       <div className="main h-screen w-screen bg-backQuiz">
         <button
           className="bg-white text-black mt-3 ml-3 p-3"
@@ -55,6 +53,7 @@ const AddQuestions = () => {
               </div>
             </div>
             <div className="formHolder flex flex-col gap-col-4 w-[100vw] md:w-[100vw] justify-center items-center ">
+              <h1 id="success" className="text-4xl pb-2 font-bold"></h1>
               <form className="flex flex-col gap-col-7 w-[100vw] md:w-[100vw] justify-center items-center">
                 <select id="round" className="w-[90vw] lg:w-[80vmin] p-2">
                   <option value="">Add Round</option>
@@ -114,9 +113,7 @@ const AddQuestions = () => {
             <div className="btnHolder flex justify-center items-center">
               <button
                 className="bg-bodytext text-white mt-2 p-2"
-                onClick={() => {
-                  onSubmitHandle();
-                }}
+                onClick={onSubmitHandle}
               >
                 Add Questions
               </button>
