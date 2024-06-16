@@ -58,22 +58,23 @@ const CmsLogin = () => {
 
   return (
     <>
-      <div className=" bg-background main pb-2 w-[100vw] flex justify-center items-center">
+      <div className=" bg-background main pb-10 w-[100vw] h-[100vh] flex justify-center items-center">
         <div className="flex flex-col justify-center items-center">
           <form
             id="form"
             className="flex flex-col justify-center items-center mt-6 space-y-7"
           >
-            <div className="box mt-[7vmin] md:mt-4 h-[27vmin] md:w-[65vmin] w-[77vw] flex flex-col justify-center items-center p-2">
+            <div className="box mt-[7vmin] md:mt-4 h-[30vmin] md:w-[67vmin] w-[77vw] flex flex-col justify-center items-center p-2">
               <img src="./VDIcon1.png"></img>
             </div>
-
-            <p className="text-[6vmin] text-bodytext font-medium mt-10">
-              CMS Log In...
+            <div className="flex flex-col justify-center items-center">
+              <p className="text-[6vmin] text-bodytext font-medium mt-10">
+                CMS Log In...
+              </p>
               <p className="text-[4vmin] md:text-[2.75vmin] text-bodytext font-medium">
                 ( For admin purpose only )
               </p>
-            </p>
+            </div>
 
             <input
               type="email"

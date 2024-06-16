@@ -43,6 +43,7 @@ const Signup = () => {
             designation: designation,
             password: password,
             round: 1,
+            questions: 5,
           })
           .then((response) => {
             if (response.data.status === 200) {

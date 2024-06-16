@@ -22,6 +22,10 @@ const usersSchema = mongoose.Schema(
       type: Number,
       require: true,
     },
+    questions: {
+      type: Number,
+      require: true,
+    },
   },
   { Collection: "users" }
 );

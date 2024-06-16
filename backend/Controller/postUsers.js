@@ -6,6 +6,7 @@ const postUser = () => {
     const designation = req.body.designation;
     const password = req.body.password;
     const round = req.body.round;
+    const questions = req.body.questions;
 
     const user = new users({
       name: name,
@@ -13,6 +14,7 @@ const postUser = () => {
       designation: designation,
       password: password,
       round: round,
+      questions: questions,
     });
 
     user.save();

@@ -1,13 +1,31 @@
 /* eslint-disable no-unused-vars */
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./main.css";
 import { useState } from "react";
 const Feedback = () => {
   const location = useLocation();
-  console.log(
-    `Hello ${location.state.userData.name} with email ${location.state.userData.email} your score is: `,
-    location.state.userScore
-  );
+  const navigate = useNavigate();
+  const correctAns = location.state.correctAns;
+  const userData = location.state.userData;
+  const prevCalcScore = location.state.score;
+  const onSubmit = () => {
+    let score = 0;
+    if (localStorage.length > 0) {
+      for (var i = 0; i < correctAns.length; i++) {
+        if (localStorage.getItem(i) === null) {
+          score += 0;
+        }
+        if (correctAns[i] === localStorage.getItem(i)) {
+          score += 10;
+        }
+      }
+      localStorage.clear();
+      console.log(score);
+      //navigate("/Score", { state: { userData: userData, score: score } });
+    } else {
+      console.log(prevCalcScore);
+    }
+  };
 
   return (
     <div className="mainBody w-[100vw] h-[100vh] flex justify-center items-center">
@@ -30,7 +48,12 @@ const Feedback = () => {
             </li>
           </ul>
           <li className="flex justify-center items-center mt-[-2vmin] text-bodytext ">
-            <button className="bg-bodytext w-[30vmin] md:w-[20vmin] text-white flex justify-center items-center p-2 rounded-2xl text-[4.75vmin] md:text-[2.75vmin] pl-3 pr-3">
+            <button
+              className="bg-bodytext w-[30vmin] md:w-[20vmin] text-white flex justify-center items-center p-2 rounded-2xl text-[4.75vmin] md:text-[2.75vmin] pl-3 pr-3"
+              onClick={() => {
+                onSubmit();
+              }}
+            >
               next
             </button>
           </li>
