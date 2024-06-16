@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
 import { useLocation, useNavigate } from "react-router-dom";
 import "./main.css";
+import React from "react";
+import { Rating } from "react-simple-star-rating";
 import { useState } from "react";
 const Feedback = () => {
-  const location = useLocation();
+  /*const location = useLocation();
   const navigate = useNavigate();
   const correctAns = location.state.correctAns;
   const userData = location.state.userData;
@@ -25,41 +27,90 @@ const Feedback = () => {
     } else {
       console.log(prevCalcScore);
     }
+    */
+  const [rating, setRating] = useState(0);
+  const [rating1, setRating1] = useState(0);
+
+  // Catch Rating value
+  const handleRating = (rate) => {
+    setRating(parseInt(rate));
+    localStorage.setItem("rate1", parseInt(rate));
+    console.log(localStorage.getItem("rate1"));
+  };
+  const handleRating1 = (rate1) => {
+    setRating1(parseInt(rate1));
+    localStorage.setItem("rate2", parseInt(rate1));
+    console.log(localStorage.getItem("rate2"));
+  };
+
+  const handleReset = () => {
+    // Set the initial value
+    setRating(0);
   };
 
   return (
-    <div className="mainBody w-[100vw] h-[100vh] flex justify-center items-center">
-      <div className="feedbackArea">
-        <div className="feedBox w-[95vw] h-[90vh] ">
-          <ul className=" flex flex-col justify-center items-center space-y-4 mt-10 ">
-            <li className="w-full flex justify-center items-center">
-              <button className="bg-bodytext text-white flex justify-center items-center p-2 rounded-2xl text-[4.5vmin] md:text-[3vmin] pl-3 pr-3">
-                Your valuable feedback
-              </button>
+    <>
+      <div className="mainHolder h-screen flex justify-center items-center">
+        <div className="main  h-screen w-[100vw] lg:h-[96vh] lg:w-[98vw] bg-backQuiz lg:rounded-[4vmin] ">
+          <ul className="flex flex-col justify-center items-center p-3s space-y-2 lg:space-y-4">
+            <li>
+              <p className="text-[8vmin] md:text-[8vmin] pb-2 text-bodytext font-bold">
+                Share Your Feedback...
+              </p>
+            </li>
+            <li>
+              <p className="text-[4.75vmin] md:text-[3.5vmin] pb-2 text-bodytext font-medium mt-3 pr-1 pl-1">
+                How do you rate the overall arrangements and guest lectures
+                orgnized by IIMT IIC?
+              </p>
+            </li>
+            <li>
+              <div className="starHolder1 flex justify-center space-x-3 lg:space-x-10">
+                <Rating
+                  onClick={handleRating}
+                  initialValue={rating}
+                  SVGstyle={{ display: "inline" }}
+                />
+              </div>
+            </li>
+            <li>
+              <div className="starHolder1 flex justify-center space-x-3 lg:space-x-10">
+                <textarea
+                  className="w-[90vw] lg:w-[67vmin] p-2"
+                  placeholder="Enter testinomials..."
+                ></textarea>
+              </div>
+            </li>
+            <li>
+              <p className="text-[4.75vmin] md:text-[3.5vmin] pb-2 text-bodytext font-medium mt-3 pr-1 pl-1">
+                How do you rate the software platform of QuizDrobe and the
+                management of the event?
+              </p>
+            </li>
+            <li>
+              <div className="starHolder1 flex justify-center space-x-3 lg:space-x-10">
+                <Rating
+                  onClick={handleRating1}
+                  initialValue={rating1}
+                  SVGstyle={{ display: "inline" }}
+                />
+              </div>
             </li>
             <li>
               <textarea
-                className="bg-[#F7FAFF] p-4 w-[90vw] h-[50vh] lg:w-[70vmin] lg:h-[50vmin] "
-                placeholder="Enter your valuable feedback..."
+                className="w-[90vw] lg:w-[67vmin] p-2"
+                placeholder="Enter testinomials..."
               ></textarea>
             </li>
-            <li className="w-[90vw] h-[10vh] lg:w-[70vmin] lg:h-[10vmin] flex justify-end mt-[-2vmin] text-bodytext ">
-              1256/3000
+            <li>
+              <button className="p-2 bg-bodytext text-white w-[30vw] lg:w-[15vmin] mt-5 lg:mt-3">
+                Next
+              </button>
             </li>
           </ul>
-          <li className="flex justify-center items-center mt-[-2vmin] text-bodytext ">
-            <button
-              className="bg-bodytext w-[30vmin] md:w-[20vmin] text-white flex justify-center items-center p-2 rounded-2xl text-[4.75vmin] md:text-[2.75vmin] pl-3 pr-3"
-              onClick={() => {
-                onSubmit();
-              }}
-            >
-              next
-            </button>
-          </li>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 export default Feedback;
