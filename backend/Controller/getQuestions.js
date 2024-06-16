@@ -1,6 +1,6 @@
-import { question } from "../Model/Questions.js";
+import { questions } from "../Model/Questions.js";
 const getQuestions = (req, res) => {
-  question
+  questions
     .find()
     .then((val) => {
       res.json(val);

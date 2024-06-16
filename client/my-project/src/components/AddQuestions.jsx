@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import { useNavigate } from "react-router-dom";
-
+import axios from "axios";
 const AddQuestions = () => {
   const navigate = useNavigate();
   const onSubmitHandle = (e) => {
@@ -13,9 +13,29 @@ const AddQuestions = () => {
     const opt4 = document.getElementById("opt4").value;
     const correct = document.getElementById("correct").value;
     const question = document.getElementById("question").value;
+    axios
+      .post("http://127.0.0.1:8000/api/questions/", {
+        round: round,
+        opt1: opt1,
+        opt2: opt2,
+        opt3: opt3,
+        opt4: opt4,
+        correct: correct,
+        question: question,
+      })
+      .then((res) => {
+        if (res.status.data === 200) {
+          document.getElementById("success").innerHTML =
+            "Uploaded Successfully";
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <>
+      <h1 id="success text-4xl pb-2"></h1>
       <div className="main h-screen w-screen bg-backQuiz">
         <button
           className="bg-white text-black mt-3 ml-3 p-3"
@@ -51,34 +71,34 @@ const AddQuestions = () => {
                   className="mt-1 w-[90vw] md:w-[80vmin] p-2 bg-white"
                   placeholder="Enter the question..."
                 />
-                <select id="opt 1" className="w-[90vw] lg:w-[80vmin] p-2 mt-1">
-                  <option value="">Add Option1</option>
-                  <option value="a">a</option>
-                  <option value="b">b</option>
-                  <option value="c">c</option>
-                  <option value="d">d</option>
-                </select>{" "}
-                <select id="opt 2" className="w-[90vw] lg:w-[80vmin] p-2 mt-1">
-                  <option value="">Add Option 4</option>
-                  <option value="a">a</option>
-                  <option value="b">b</option>
-                  <option value="c">c</option>
-                  <option value="d">d</option>
-                </select>{" "}
-                <select id="opt 3" className="w-[90vw] lg:w-[80vmin] p-2 mt-1">
-                  <option value="">Add Option 3</option>
-                  <option value="a">a</option>
-                  <option value="b">b</option>
-                  <option value="c">c</option>
-                  <option value="d">d</option>
-                </select>{" "}
-                <select id="opt 4" className="w-[90vw] lg:w-[80vmin] p-2 mt-1">
-                  <option value="">Add Option 4</option>
-                  <option value="a">a</option>
-                  <option value="b">b</option>
-                  <option value="c">c</option>
-                  <option value="d">d</option>
-                </select>{" "}
+                <input
+                  type="text"
+                  name="option1"
+                  id="opt1"
+                  className="mt-1 w-[90vw] md:w-[80vmin] p-2 bg-white"
+                  placeholder="Enter the option1..."
+                />
+                <input
+                  type="text"
+                  name="option2"
+                  id="opt2"
+                  className="mt-1 w-[90vw] md:w-[80vmin] p-2 bg-white"
+                  placeholder="Enter the option2..."
+                />
+                <input
+                  type="text"
+                  name="option3"
+                  id="opt3"
+                  className="mt-1 w-[90vw] md:w-[80vmin] p-2 bg-white"
+                  placeholder="Enter the option3..."
+                />
+                <input
+                  type="text"
+                  name="option4"
+                  id="opt4"
+                  className="mt-1 w-[90vw] md:w-[80vmin] p-2 bg-white"
+                  placeholder="Enter the option4..."
+                />
                 <select
                   id="correct"
                   className="w-[90vw] lg:w-[80vmin] p-2 mt-1"

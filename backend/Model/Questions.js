@@ -34,5 +34,5 @@ const questionsSchema = mongoose.Schema(
   { Collection: "questions" }
 );
 
-const question = mongoose.model("questions", questionsSchema);
-export { question };
+const questions = mongoose.model("questions", questionsSchema);
+export { questions };
