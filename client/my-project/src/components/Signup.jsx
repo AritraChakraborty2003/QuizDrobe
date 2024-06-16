@@ -275,7 +275,7 @@ const Signup = () => {
               <div className="w-[100vw] flex  flex-col gap-y-3 lg:gap-y-4 justify-center items-center">
                 <button
                   className="mt-7 lg:mt-3 bg-black  bg-buttonColor flex justify-center items-center
-              w-[70vw] md:w-[25vw] p-3 text-maintext font-medium rounded-2xl "
+              w-[70vw] md:w-[24vw] p-3 text-maintext font-medium rounded-2xl "
                   onClick={onSubmitHandle}
                 >
                   Create Account

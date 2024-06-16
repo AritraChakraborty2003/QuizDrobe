@@ -151,7 +151,7 @@ const Login = () => {
                 ></img>
               </div>
 
-              <p className="text-[10vmin] md:text-[6vmin] text-bodytext font-medium mt-3">
+              <p className="text-[10vmin] md:text-[6vmin] text-bodytext font-medium mt-1">
                 Log In...
               </p>
               <input
