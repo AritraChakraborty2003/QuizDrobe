@@ -18,4 +18,4 @@ POST api/rounds - POST round details in an API
 
 PATCH api/users/ - UPDATE round and questions API 
 
-DELETE api/questionId/round - DELETE a question with questionId=questionId
+
