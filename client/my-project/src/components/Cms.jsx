@@ -20,7 +20,7 @@ const Cms = () => {
             >
               Logout
             </button>
-            <div className="flex justify-center items-center mt-5 ">
+            <div className="lg:h-[90vh] flex justify-center items-center mt-5 ">
               <div className="flex justify-center items-center space-y-3 lg:space-y-0 lg:space-x-7 flex-wrap">
                 <div className="card h-[50vmin] w-[60vmin] bg-white flex flex-col justify-center items-center p-2">
                   <div className="imageHolder h-[40vmin] w-[50vmin] flex flex-col justify-center items-center bg-white">
@@ -47,7 +47,12 @@ const Cms = () => {
                         className="max-w-full max-h-full object-contain bg-white"
                       ></img>
                     </div>
-                    <button className="bg-bodytext text-white p-2">
+                    <button
+                      className="bg-bodytext text-white p-2"
+                      onClick={() => {
+                        navigate("/AddQuestions");
+                      }}
+                    >
                       Add Questions
                     </button>
                   </div>

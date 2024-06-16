@@ -3,6 +3,7 @@ import { adminRouter } from "./Routes/adminRouter.js";
 import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
+import { roundsRouter } from "./Routes/roundsRouter.js";
 import { logResReq } from "./Middlewares/logResReq.js";
 import { genRouter } from "./Routes/genRouter.js";
 import { userRouter } from "./Routes/usersRouter.js";
@@ -20,7 +21,7 @@ app.use("/", genRouter);
 app.use("/api/users", userRouter);
 app.use("/api/questions", questionsRouter);
 app.use("/api/admin", adminRouter);
-
+app.use("/api/rounds/", roundsRouter);
 app.listen(`${process.env.PORT}`, () => {
   console.log("Backend Connected");
 });

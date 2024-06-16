@@ -2,6 +2,7 @@
 import { Routes, BrowserRouter, Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import Rules from "./components/Rules";
+import AddQuestions from "./components/AddQuestions";
 import AddRound from "./components/AddRound";
 import CmsLogin from "./components/CmsLogin";
 import Login from "./components/Login";
@@ -25,6 +26,7 @@ function App() {
           <Route path="/CmsLogin" element={<CmsLogin />}></Route>
           <Route path="/Score" element={<Score />}></Route>
           <Route path="/AddRound" element={<AddRound />}></Route>
+          <Route path="/AddQuestions" element={<AddQuestions />}></Route>
         </Routes>
       </BrowserRouter>
     </>

@@ -109,6 +109,12 @@ const Login = () => {
                         }}
                       ></img>
                     </div>
+                    <input
+                      type="text"
+                      readOnly={true}
+                      className="bg-white rounded-[2.5vmin] flex space-x-2 w-[80vw] md:w-[77vmin] border-bodytext border-b-[4px] p-3"
+                      value={`Round  ${round}`}
+                    />
                   </div>
                 </form>
 

@@ -2,11 +2,6 @@ import mongoose from "mongoose";
 
 const questionsSchema = mongoose.Schema(
   {
-    id: {
-      type: String,
-      require: true,
-    },
-
     round: {
       type: String,
       require: true,
