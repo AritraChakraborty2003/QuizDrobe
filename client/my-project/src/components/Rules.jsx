@@ -23,9 +23,9 @@ const Rules = () => {
   return (
     <>
       {(localStorage.getItem("loggedin") === "true" && (
-        <body className="bg-backQuiz font-roboto h-[100vh]">
+        <body className="bg-backQuiz font-roboto sm:h-[100vh] flex justify-center items-center">
           <div className="bg-backQuiz pb-16 mainBody w-screen md:h-screen flex flex-col justify-center items-center ">
-            <div className="rulesBody p-2  w-[93vw] lg:w-[80vmin] border-rulebody border-2 bg-rulebody rounded-2xl  mt-5 pb-5 ">
+            <div className="rulesBody p-2  w-[93vw] lg:w-[85vmin] border-rulebody border-2 bg-rulebody rounded-2xl  mt-5 pb-5 ">
               <ul className="mt-4 bg-rulebody ">
                 <li className="w-full flex justify-center items-center bg-rulebody">
                   <button className="bg-bodytext text-white flex justify-center items-center p-2 md:w-[27vmin] rounded-2xl text-[6vmin] md:text-[3vmin]">
@@ -63,17 +63,19 @@ const Rules = () => {
                   </li>
                 </li>
               </ul>
+              <div className="mt-2 flex justify-center">
+                <button
+                  className="bg-bodytext text-white flex justify-center items-center p-1 w-[30vmin] md:w-[27vmin] rounded-2xl text-[6vmin] md:text-[3vmin] mt-4"
+                  onClick={() => {
+                    navigate("/QuizBody", {
+                      state: { userData: userData, qdata: data },
+                    });
+                  }}
+                >
+                  next
+                </button>
+              </div>
             </div>
-            <button
-              className="bg-bodytext text-white flex justify-center items-center p-1 w-[30vmin] md:w-[27vmin] rounded-2xl text-[6vmin] md:text-[3vmin] mt-4"
-              onClick={() => {
-                navigate("/QuizBody", {
-                  state: { userData: userData, qdata: data },
-                });
-              }}
-            >
-              next
-            </button>
           </div>
         </body>
       )) || <Navigate to="/login" />}

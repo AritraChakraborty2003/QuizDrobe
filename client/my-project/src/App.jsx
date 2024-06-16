@@ -5,6 +5,7 @@ import Rules from "./components/Rules";
 import CmsLogin from "./components/CmsLogin";
 import Login from "./components/Login";
 import Feedback from "./components/Feedback";
+import Score from "./components/Score";
 import QuizBody from "./components/QuizBody";
 import Cms from "./components/Cms";
 import Addadmin from "./components/AddAdmin";
@@ -21,6 +22,7 @@ function App() {
           <Route path="/quizBody" element={<QuizBody />}></Route>
           <Route path="/feedback" element={<Feedback />}></Route>
           <Route path="/CmsLogin" element={<CmsLogin />}></Route>
+          <Route path="/Score" element={<Score />}></Route>
         </Routes>
       </BrowserRouter>
     </>
