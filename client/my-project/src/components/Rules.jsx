@@ -20,7 +20,7 @@ const Rules = () => {
   const location = useLocation();
   const userData = location.state.data;
   const round = userData.round;
-  const qData = data.filter((val) => val.round == 1);
+  const qData = data.filter((val) => val.round == round);
   console.log(qData);
   console.log(userData);
   return (

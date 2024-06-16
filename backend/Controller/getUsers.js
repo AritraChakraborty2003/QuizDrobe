@@ -17,4 +17,16 @@ function getUsers(req, res) {
       res.json(err);
     });
 }
-export { getUsers, generateRandom };
+
+function getUsersID(req, res) {
+  const obj = {
+    name: "Abhi",
+  };
+  users
+    .findOne({ email: req.query.email })
+    .then((user) => {
+      res.json(user);
+    })
+    .catch((err) => console.log(err));
+}
+export { getUsers, generateRandom, getUsersID };

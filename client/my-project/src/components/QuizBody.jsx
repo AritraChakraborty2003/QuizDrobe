@@ -99,7 +99,6 @@ const QuizBody = () => {
                       `Q${1}. ` + qData[0].question) ||
                       `Q${parseInt(localStorage.getItem("index")) + 1}. ` +
                         qData[parseInt(localStorage.getItem("index"))].question}
-                    ?
                   </p>
                 </div>
                 <div className="bg-backQuiz optionArea flex flex-wrap w-[90vw] md:w-[90vw] md:justify-center text-quiztext  font-medium items-center md:mt-3  lg:gap-y-5 lg:gap-x-5 text-[4.25vmin] md:text-[2.15vmin] rounded-[2.45vmin] text-black gap-y-2">
