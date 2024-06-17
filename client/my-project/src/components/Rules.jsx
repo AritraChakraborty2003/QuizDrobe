@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import "./main.css";
 import { useEffect, useState } from "react";
@@ -63,6 +64,10 @@ const Rules = () => {
                   <li className="bg-rulebody">
                     7. Scores of each round will be evaluated to declare overall
                     winner
+                  </li>
+                  <li className="bg-rulebody">
+                    8. Please don't refresh the page while attempting the
+                    questions of the quiz
                   </li>
                 </li>
               </ul>

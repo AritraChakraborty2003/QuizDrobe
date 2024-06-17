@@ -82,7 +82,7 @@ const Signup = () => {
                       placeholder="Enter your name..."
                       name="name"
                       id="name"
-                      className="bg-white rounded-[2.5vmin]  p-2 w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]"
+                      className="bg-white rounded-[2.5vmin]  p-2 2xl:p-3 w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]"
                       onChange={onChangename}
                     />
                     <input
@@ -90,7 +90,7 @@ const Signup = () => {
                       placeholder="Enter your email..."
                       name="email"
                       id="email"
-                      className="bg-white rounded-[2.5vmin]  p-2 w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]"
+                      className="bg-white rounded-[2.5vmin]  p-2 2xl:p-3 w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]"
                       onChange={onChangeemail}
                     />
                     <input
@@ -98,15 +98,15 @@ const Signup = () => {
                       name="designation"
                       id="designation"
                       placeholder="Enter your designation..."
-                      className="bg-white rounded-[2.5vmin] p-2 w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]"
+                      className="bg-white rounded-[2.5vmin] p-2 2xl:p-3 w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]"
                       onChange={onChangedesig}
                     />
-                    <div className="bg-white rounded-[2.5vmin] flex space-x-2 w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]">
+                    <div className="bg-white rounded-[2.5vmin]  flex space-x-2 w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]">
                       <input
                         type={showPassword ? "text" : "password"}
                         name="password"
                         id="password"
-                        className="bg-white rounded-[2.5vmin] p-2 w-[70vw] md:w-[44vw] "
+                        className="bg-white rounded-[2.5vmin] 2xl:p-3 p-2 w-[70vw] md:w-[44vw] "
                         placeholder="Enter your password..."
                         onChange={onChangepassword}
                       />
@@ -128,12 +128,12 @@ const Signup = () => {
                         }}
                       ></img>
                     </div>
-                    <div className="bg-white rounded-[2.5vmin] flex space-x-2  w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]">
+                    <div className="bg-white rounded-[2.5vmin]  flex space-x-2  w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]">
                       <input
                         name="cnfpassword"
                         type={showPassword1 ? "text" : "password"}
                         id="cnfpassword"
-                        className="p-2 w-[70vw] md:w-[84vmin] bg-white rounded-[2.5vmin]  "
+                        className="p-2 2xl:p-3 w-[70vw] md:w-[84vmin] bg-white rounded-[2.5vmin]  "
                         placeholder="Confirm your password..."
                         onChange={onChangecnfpassword}
                       />
@@ -159,7 +159,7 @@ const Signup = () => {
                   <div className="w-[100vw] flex  flex-col gap-y-3 lg:gap-y-4 justify-center items-start">
                     <button
                       className="mt-7 lg:mt-5 bg-black  bg-white flex justify-center items-center
-              w-[70vw] md:w-[20vw] p-3 text-maintext font-medium rounded-2xl "
+              w-[70vw] md:w-[20vw] p-2 2xl:p-3  text-maintext font-medium rounded-2xl "
                       onClick={onSubmitHandle}
                     >
                       Create Account

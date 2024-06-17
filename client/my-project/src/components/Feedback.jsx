@@ -51,7 +51,7 @@ const Feedback = () => {
   return (
     <>
       <div className="mainHolder h-screen flex justify-center items-center">
-        <div className="main  h-screen w-[100vw] lg:h-[96vh] lg:w-[98vw] bg-backQuiz lg:rounded-[4vmin] ">
+        <div className="main  h-screen w-[100vw] lg:h-[96vh] lg:w-[98vw] p-2 bg-backQuiz lg:rounded-[4vmin] ">
           <ul className="flex flex-col justify-center items-center p-3s space-y-2 lg:space-y-4">
             <li>
               <p className="text-[8vmin] md:text-[8vmin] pb-2 text-bodytext font-bold">

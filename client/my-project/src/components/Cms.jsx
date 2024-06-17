@@ -20,7 +20,13 @@ const Cms = () => {
             >
               Logout
             </button>
-            <div className="lg:h-[90vh] flex justify-center items-center mt-5 ">
+            <div className="lg:h-[90vh] flex flex-col justify-center items-center mt-3 space-y-5  ">
+              <div className="flex flex-col justify-center items-center ">
+                <p className="font-bold text-6xl pb-3">CMS Platform</p>
+                <p className="text-lg mt-[-1vmin]">
+                  ( Your one stop CMS platfrom for managing quiz application )
+                </p>
+              </div>
               <div className="flex justify-center items-center space-y-3 lg:space-y-0 lg:space-x-7 flex-wrap">
                 <div className="card h-[50vmin] w-[60vmin] bg-white flex flex-col justify-center items-center p-2">
                   <div className="imageHolder h-[40vmin] w-[50vmin] flex flex-col justify-center items-center bg-white">

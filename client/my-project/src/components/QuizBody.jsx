@@ -84,7 +84,10 @@ const QuizBody = () => {
                   <div className="flex justify-center">
                     <p className="ml-3 text-[10vmin] lg:text-[8vmin]">
                       Welcome{" "}
-                      <span className="text-quiztext font-medium">Aritra,</span>
+                      <span className="text-bodytext font-semibold">
+                        Aritra
+                      </span>
+                      ,
                     </p>
                   </div>
                 </div>
@@ -94,14 +97,14 @@ const QuizBody = () => {
                   </div>
                 </div>
                 <div className="bg-feedbackbody qArea w-[90vw] md:w-[85vw] border-[#939494] border-2 p-3 md:p-4 rounded-[4vmin]  border-b-[4px] mt-5">
-                  <p className="bg-feedbackbody text-[5vmin] md:text-[3.75vmin]  text-quiztext font-semibold lg:font-semibold pb-1 font-roboto ">
+                  <p className="bg-feedbackbody text-[5vmin] md:text-[3.75vmin]  text-quiztext font-semibold lg:font-semibold pb-1 font-poppins ">
                     {(localStorage.getItem("index") === null &&
                       `Q${1}. ` + qData[0].question) ||
                       `Q${parseInt(localStorage.getItem("index")) + 1}. ` +
                         qData[parseInt(localStorage.getItem("index"))].question}
                   </p>
                 </div>
-                <div className="bg-backQuiz optionArea flex flex-wrap w-[90vw] md:w-[90vw] md:justify-center text-quiztext  font-medium items-center md:mt-3  lg:gap-y-5 lg:gap-x-5 text-[4.25vmin] md:text-[2.15vmin] rounded-[2.45vmin] text-black gap-y-2">
+                <div className="font-poppins bg-backQuiz optionArea flex flex-wrap w-[90vw] md:w-[90vw] md:justify-center text-quiztext  font-medium items-center md:mt-3  lg:gap-y-5 lg:gap-x-5 text-[4.25vmin] md:text-[2.15vmin] rounded-[2.45vmin] text-black gap-y-2">
                   <div
                     id="a"
                     className="option bg-[#F7FAFF]  w-[90vw] md:w-[41vw]  rounded-[4vmin] flex items-center  md:text-[2.75vmin]   p-3  md:pl-3 border-bodytext border-b-[5px] mt-4 lg:mt-[0px]"
@@ -173,40 +176,18 @@ const QuizBody = () => {
                       qData[0].option4) ||
                       qData[parseInt(localStorage.getItem("index"))].option4}
                   </div>
-
-                  {(localStorage.getItem("index") == null && (
-                    <button
-                      className="bg-[#F7FAFF] text-bodytext flex justify-center items-center p-2 w-[25vmin] md:w-[22vmin] rounded-[2vmin] text-[4vmin] md:text-[3vmin] mt-4 border-bodytext border-2"
-                      onClick={() => {
-                        if (localStorage.getItem("index") == null) {
-                          localStorage.setItem("index", 1);
-                          Change(localStorage.getItem("value"));
-                        } else {
-                          let ind = parseInt(localStorage.getItem("index"));
-                          if (ind < userData.questions) {
-                            ind = ind + 1;
-                            Change(localStorage.getItem("value"));
-                            localStorage.setItem("index", ind);
-                          }
-                        }
-                      }}
-                    >
-                      Next
-                    </button>
-                  )) ||
-                    (parseInt(localStorage.getItem("index")) <
-                      userData.questions - 1 && (
+                  <div className="w-[100vw] flex justify-center items-center">
+                    {(localStorage.getItem("index") == null && (
                       <button
                         className="bg-[#F7FAFF] text-bodytext flex justify-center items-center p-2 w-[25vmin] md:w-[22vmin] rounded-[2vmin] text-[4vmin] md:text-[3vmin] mt-4 border-bodytext border-2"
                         onClick={() => {
                           if (localStorage.getItem("index") == null) {
                             localStorage.setItem("index", 1);
+                            Change(localStorage.getItem("value"));
                           } else {
                             let ind = parseInt(localStorage.getItem("index"));
-
                             if (ind < userData.questions) {
                               ind = ind + 1;
-
                               Change(localStorage.getItem("value"));
                               localStorage.setItem("index", ind);
                             }
@@ -215,19 +196,42 @@ const QuizBody = () => {
                       >
                         Next
                       </button>
-                    ))}
+                    )) ||
+                      (parseInt(localStorage.getItem("index")) <
+                        userData.questions - 1 && (
+                        <button
+                          className="bg-[#F7FAFF] text-bodytext flex justify-center items-center p-2 w-[25vmin] md:w-[22vmin] rounded-[2vmin] text-[4vmin] md:text-[3vmin] mt-4 border-bodytext border-2"
+                          onClick={() => {
+                            if (localStorage.getItem("index") == null) {
+                              localStorage.setItem("index", 1);
+                            } else {
+                              let ind = parseInt(localStorage.getItem("index"));
 
-                  {parseInt(localStorage.getItem("index")) ==
-                    userData.questions - 1 && (
-                    <button
-                      className="bg-bodytext text-white flex justify-center items-center p-2 w-[25vmin] md:w-[22vmin] rounded-[2vmin] text-[4vmin] md:text-[3vmin] mt-4 border-white border-2"
-                      onClick={() => {
-                        onSubmit();
-                      }}
-                    >
-                      Submit
-                    </button>
-                  )}
+                              if (ind < userData.questions) {
+                                ind = ind + 1;
+
+                                Change(localStorage.getItem("value"));
+                                localStorage.setItem("index", ind);
+                              }
+                            }
+                          }}
+                        >
+                          Next
+                        </button>
+                      ))}
+
+                    {parseInt(localStorage.getItem("index")) ==
+                      userData.questions - 1 && (
+                      <button
+                        className="bg-bodytext text-white flex justify-center items-center p-2 w-[25vmin] md:w-[22vmin] rounded-[2vmin] text-[4vmin] md:text-[3vmin] mt-4 border-white border-2"
+                        onClick={() => {
+                          onSubmit();
+                        }}
+                      >
+                        Submit
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

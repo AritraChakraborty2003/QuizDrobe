@@ -25,6 +25,7 @@ export default {
     fontFamily: {
       oxygen: ["Oxygen"],
       roboto: ["Roboto"],
+      poppins: ["Poppins"],
     },
     extend: {},
   },
