@@ -59,7 +59,7 @@ const Feedback = () => {
                 .then((res) => {
                   if (res.data.status === 200) {
                     navigate("/ScorePage", {
-                      state: { score: score },
+                      state: { score: score, userData: userData },
                     });
                   }
                 })
@@ -104,7 +104,9 @@ const Feedback = () => {
                 })
                 .then((res) => {
                   if (res.data.status === 200) {
-                    navigate("/ScorePage", { state: { score: prevCalcScore } });
+                    navigate("/ScorePage", {
+                      state: { score: prevCalcScore, userData: userData },
+                    });
                   }
                 })
                 .catch((err) => console.log(err));
