@@ -143,8 +143,8 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className="block lg:hidden h-screen">
-        <div className="bg-backQuiz main   w-[100vw] flex justify-center items-center">
+      <div className="block lg:hidden">
+        <div className="h-screen bg-backQuiz main   w-[100vw] flex justify-center items-center">
           <div className="bg-backQuiz  font-roboto flex flex-col justify-center items-center pt-4">
             <form
               id="form"
