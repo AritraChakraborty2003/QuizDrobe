@@ -1,6 +1,6 @@
-import { admins } from "../Model/admin.js";
+import { host } from "../Model/admin.js";
 const getAdmin = (req, res) => {
-  admins
+  host
     .find()
     .then((val) => {
       res.json(val);
