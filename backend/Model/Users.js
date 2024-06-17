@@ -14,6 +14,10 @@ const usersSchema = mongoose.Schema(
       type: String,
       require: true,
     },
+    institute: {
+      type: String,
+      require: true,
+    },
     password: {
       type: String,
       require: true,
@@ -23,6 +27,14 @@ const usersSchema = mongoose.Schema(
       require: true,
     },
     questions: {
+      type: Number,
+      require: true,
+    },
+    ip: {
+      type: String,
+      require: true,
+    },
+    oScore: {
       type: Number,
       require: true,
     },

@@ -10,10 +10,13 @@ const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showPassword1, setShowPassword1] = useState(false);
   const [email, setEmail] = useState("");
+  const [inst, setInst] = useState("");
   const [cnfPassword, setcnfPassword] = useState("");
   const [designation, setDesignation] = useState("");
   const [password, setPassword] = useState("");
-
+  const onChangeinst = (e) => {
+    setInst(e.target.value);
+  };
   const onChangename = (e) => {
     setName(e.target.value);
   };
@@ -41,9 +44,11 @@ const Signup = () => {
             name: name,
             email: email,
             designation: designation,
+            institute: inst,
             password: password,
             round: 1,
             questions: 5,
+            oScore: 0,
           })
           .then((response) => {
             if (response.data.status === 200) {
@@ -100,6 +105,15 @@ const Signup = () => {
                       placeholder="Enter your designation..."
                       className="bg-white rounded-[2.5vmin] p-2 2xl:p-3 w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]"
                       onChange={onChangedesig}
+                    />
+
+                    <input
+                      type="text"
+                      name="institute"
+                      id="institute"
+                      placeholder="Enter your institute..."
+                      className="bg-white rounded-[2.5vmin] p-2 2xl:p-3 w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]"
+                      onChange={onChangeinst}
                     />
                     <div className="bg-white rounded-[2.5vmin]  flex space-x-2 w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]">
                       <input
