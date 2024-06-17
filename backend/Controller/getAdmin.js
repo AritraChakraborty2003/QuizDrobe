@@ -1,6 +1,6 @@
-import { adminObj } from "../Model/admin.js";
+import { admins } from "../Model/admin.js";
 const getAdmin = (req, res) => {
-  adminObj
+  admins
     .find()
     .then((val) => {
       res.json(val);

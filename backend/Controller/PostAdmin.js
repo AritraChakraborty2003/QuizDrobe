@@ -1,10 +1,10 @@
-import { adminObj } from "../Model/admin.js";
+import { admins } from "../Model/admin.js";
 const PostAdmin = () => {
   return (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
     const password = req.body.password;
-    const newAdmin = new adminObj({
+    const newAdmin = new admins({
       name: name,
       email: email,
       password: password,
