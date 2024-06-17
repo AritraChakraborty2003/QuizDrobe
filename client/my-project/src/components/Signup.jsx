@@ -237,6 +237,14 @@ const Signup = () => {
                   className="bg-buttonColor rounded-[2.5vmin] p-2 w-[80vw] md:w-[87vmin] border-bodytext border-b-[3.75px]"
                   onChange={onChangedesig}
                 />
+                <input
+                  type="text"
+                  name="institute"
+                  id="institute"
+                  placeholder="Enter your institute..."
+                  className="bg-white rounded-[2.5vmin] p-2 2xl:p-3 w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]"
+                  onChange={onChangeinst}
+                />
                 <div className="bg-buttonColor rounded-[2.5vmin] flex space-x-2 w-[80vw] md:w-[87vmin] border-bodytext border-b-[3.75px]">
                   <input
                     type={showPassword ? "text" : "password"}
