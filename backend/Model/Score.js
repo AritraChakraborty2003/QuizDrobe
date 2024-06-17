@@ -32,9 +32,9 @@ const ScoreSchema = mongoose.Schema(
     },
   },
   {
-    collection: "Score",
+    collection: "scores",
   }
 );
 
-const scores = mongoose.model("Score", ScoreSchema);
+const scores = mongoose.model("scores", ScoreSchema);
 export { scores };

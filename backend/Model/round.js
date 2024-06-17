@@ -15,8 +15,8 @@ const roundSchema = mongoose.Schema(
     },
   },
   {
-    Collection: "Rounds",
+    Collection: "rounds",
   }
 );
-const rounds = mongoose.model("Rounds", roundSchema);
+const rounds = mongoose.model("rounds", roundSchema);
 export { rounds };

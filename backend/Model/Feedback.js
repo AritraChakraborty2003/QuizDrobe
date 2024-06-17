@@ -32,8 +32,8 @@ const feedbackSchema = mongoose.Schema(
     },
   },
   {
-    Collection: "Feedback",
+    Collection: "feedbacks",
   }
 );
-const Feedback = mongoose.model("Feedback", feedbackSchema);
+const Feedback = mongoose.model("feedbacks", feedbackSchema);
 export { Feedback };

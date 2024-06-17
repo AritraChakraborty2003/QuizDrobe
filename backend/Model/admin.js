@@ -15,8 +15,8 @@ const adminSchema = mongoose.Schema(
       require: true,
     },
   },
-  { Collection: "host" }
+  { Collection: "hosts" }
 );
 
-const host = mongoose.model("host", adminSchema);
-export { host };
+const hosts = mongoose.model("hosts", adminSchema);
+export { hosts };
