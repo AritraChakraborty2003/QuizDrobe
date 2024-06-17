@@ -150,7 +150,7 @@ const Login = () => {
               id="form"
               className="flex flex-col justify-center items-center mt-2 space-y-7"
             >
-              <div className="mt-[7vmin] from-background to-backQuiz  lg:bg-gradient-to-tl lg:from-background lg:to-background font-roboto box  md:mt-4 h-[40vmin] md:h-[30vmin] md:w-[65vmin] w-[85vw] flex flex-col justify-center items-center p-2">
+              <div className="mt-[7vmin] from-background to-backQuiz  lg:bg-gradient-to-tl lg:from-background lg:to-background font-roboto box  md:mt-4 h-[50vmin] md:h-[30vmin] md:w-[65vmin] w-[90vw] flex flex-col justify-center items-center p-2">
                 <img
                   src="./VDIcon1.png"
                   className="max-w-full max-h-full object-contain"
