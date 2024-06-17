@@ -26,6 +26,10 @@ const ScoreSchema = mongoose.Schema(
       type: Number,
       require: true,
     },
+    round: {
+      type: Number,
+      require: true,
+    },
   },
   {
     collection: "Score",

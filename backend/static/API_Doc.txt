@@ -17,5 +17,5 @@ POST api/rounds - POST round details in an API - Y
 
 
 PATCH api/users/ - UPDATE round and questions API - Y
-PATCH api/users/data?email=""&uScore=""&time="" - Y
+PATCH api/users/Oscore - Y
 

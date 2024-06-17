@@ -11,6 +11,8 @@ const Feedback = () => {
   const correctAns = location.state.correctAns;
   const userData = location.state.userData;
   const prevCalcScore = location.state.score;
+  const time = 300 - location.state.time;
+  console.log(time);
   const onSubmit = () => {
     let score = 0;
     if (localStorage.length > 2) {
@@ -28,51 +30,88 @@ const Feedback = () => {
       const test1 = document.getElementById("test1").value;
       const testp = document.getElementById("testp").value;
 
-      axios
-        .post("http://127.0.0.1:8000/api/feedback", {
-          name: userData.name,
-          email: userData.email,
-          round: userData.round,
-          designation: userData.designation,
-          star1: rating,
-          test1: test1,
-          starp: rating1,
-          testp: testp,
-        })
-        .then((res) => {
-          if (res.data.status === 200) {
-            navigate("/ScorePage", {
-              state: { userData: userData, score: score },
-            });
-          }
-        })
-        .catch((err) => console.log(err));
-      //navigate("/Score", { state: { userData: userData, score: score } });
+      if (rating === 0 || rating1 === 0 || test1 === "" || testp === "") {
+        alert("All fields must be filled to proceed");
+      } else {
+        axios
+          .post("http://127.0.0.1:8000/api/feedback", {
+            name: userData.name,
+            email: userData.email,
+            round: userData.round,
+            designation: userData.designation,
+            star1: rating,
+            test1: test1,
+            starp: rating1,
+            testp: testp,
+          })
+          .then((res) => {
+            if (res.data.status === 200) {
+              axios
+                .post("http://127.0.0.1:8000/api/score", {
+                  name: userData.name,
+                  email: userData.email,
+                  designation: userData.designation,
+                  institute: userData.institute,
+                  time: time,
+                  score: score,
+                  round: userData.round,
+                })
+                .then((res) => {
+                  if (res.data.status === 200) {
+                    navigate("/ScorePage", {
+                      state: { score: score },
+                    });
+                  }
+                })
+                .catch((err) => console.log(err));
+            }
+          })
+          .catch((err) => console.log(err));
+
+        //navigate("/Score", { state: { userData: userData, score: score } });
+      }
     } else {
       console.log(prevCalcScore);
 
       const test1 = document.getElementById("test1").value;
       const testp = document.getElementById("testp").value;
 
-      axios
-        .post("http://127.0.0.1:8000/api/feedback", {
-          name: userData.name,
-          email: userData.email,
-          round: userData.round,
-          designation: userData.designation,
-          star1: rating,
-          test1: test1,
-          starp: rating1,
-          testp: testp,
-        })
-        .then((res) => {
-          if (res.data.status === 200) {
-            navigate("/ScorePage", {
-              state: { userData: userData, score: prevCalcScore },
-            });
-          }
-        })
-        .catch((err) => console.log(err));
+      if (rating === 0 || rating1 === 0 || test1 === "" || testp === "") {
+        alert("All fields must be filled to proceed");
+      } else {
+        axios
+          .post("http://127.0.0.1:8000/api/feedback", {
+            name: userData.name,
+            email: userData.email,
+            round: userData.round,
+            designation: userData.designation,
+            star1: rating,
+            test1: test1,
+            starp: rating1,
+            testp: testp,
+          })
+          .then((res) => {
+            if (res.data.status === 200) {
+              axios
+                .post("http://127.0.0.1:8000/api/score", {
+                  name: userData.name,
+                  email: userData.email,
+                  designation: userData.designation,
+                  institute: userData.institute,
+                  time: time,
+                  score: prevCalcScore,
+                  round: userData.round,
+                })
+                .then((res) => {
+                  if (res.data.status === 200) {
+                    navigate("/ScorePage", { state: { score: prevCalcScore } });
+                  }
+                })
+                .catch((err) => console.log(err));
+            }
+          })
+          .catch((err) => console.log(err));
+      }
     }
   };
   const [rating, setRating] = useState(0);

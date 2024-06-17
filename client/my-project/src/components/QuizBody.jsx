@@ -9,7 +9,7 @@ const QuizBody = () => {
   const userData = location.state.userData;
   const qData = location.state.qdata;
 
-  const [time, setTime] = useState(10);
+  const [time, setTime] = useState(300);
   const [score, setScore] = useState(0);
   const correctAns = [];
   qData.map((question) => {
@@ -40,7 +40,9 @@ const QuizBody = () => {
       }
     }
     localStorage.clear();
-    navigate("/feedback", { state: { userData: userData, score: score } });
+    navigate("/feedback", {
+      state: { userData: userData, score: score, time: time },
+    });
   };
   const Change1 = (val) => {
     if (val != "" || val != null) {
@@ -80,7 +82,7 @@ const QuizBody = () => {
       {(time > 0 && (
         <body className="bg-backQuiz  lg:bg-gradient-to-tl lg:from-white lg:to-white font-roboto ">
           <div className="h-[100vh] flex justify-center items-center">
-            <div className="mainArea h-[96vh] lg:[80vh] 2xl:h-[96vh] w-[100vw]  flex flex-col md:justify-center  md:items-center justify-center">
+            <div className="mainArea  lg:[80vh] 2xl:h-[96vh] w-[100vw]  flex flex-col md:justify-center  md:items-center justify-center">
               <div className="bg-backQuiz font-roboto w-[99vw] 2xl:pb-[6vmin] 2xl:pt-[6vmin] md:w-[95vw] pb-[5vmin] pt-[5vmin] flex flex-col border-[#939494] lg:border-[2.45px] justify-center items-center rounded-[2.45vmin] lg:shadow-[0_10px_12px_10px_rgba(0,0,0,0.3)]">
                 <div className="mt-[2.45vmin]">
                   <div className="flex justify-center">
@@ -244,6 +246,7 @@ const QuizBody = () => {
           state: {
             userData: userData,
             correctAns: correctAns,
+            time: time,
           },
         })}
     </>
