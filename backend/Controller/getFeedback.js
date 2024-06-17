@@ -7,8 +7,6 @@ const getFeedback = (req, res) => {
     .catch((err) => {
       console.log(err);
     });
-
-  Feedback.save();
 };
 
 const getFeedbackId = (req, res) => {

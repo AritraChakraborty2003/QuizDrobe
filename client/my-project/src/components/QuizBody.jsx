@@ -9,7 +9,7 @@ const QuizBody = () => {
   const userData = location.state.userData;
   const qData = location.state.qdata;
 
-  const [time, setTime] = useState(300);
+  const [time, setTime] = useState(10);
   const [score, setScore] = useState(0);
   const correctAns = [];
   qData.map((question) => {
@@ -72,6 +72,8 @@ const QuizBody = () => {
       document.getElementById(val).style.color = "#737373";
     }
   };
+  const nameData = userData.name.split(" ");
+  console.log(nameData);
 
   return (
     <>
@@ -85,7 +87,7 @@ const QuizBody = () => {
                     <p className="ml-3 text-[10vmin] lg:text-[8vmin]">
                       Welcome{" "}
                       <span className="text-bodytext font-semibold">
-                        Aritra
+                        {nameData[0]}
                       </span>
                       ,
                     </p>

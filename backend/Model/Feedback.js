@@ -2,6 +2,18 @@ import mongoose from "mongoose";
 
 const feedbackSchema = mongoose.Schema(
   {
+    name: {
+      type: String,
+      require: true,
+    },
+    email: {
+      type: String,
+      require: true,
+    },
+    round: {
+      type: String,
+      require: true,
+    },
     star1: {
       type: String,
       require: true,

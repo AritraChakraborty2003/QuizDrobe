@@ -2,17 +2,18 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import "./main.css";
 import React from "react";
+import axios from "axios";
 import { Rating } from "react-simple-star-rating";
 import { useState } from "react";
 const Feedback = () => {
   const location = useLocation();
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
   const correctAns = location.state.correctAns;
   const userData = location.state.userData;
   const prevCalcScore = location.state.score;
   const onSubmit = () => {
     let score = 0;
-    if (localStorage.length > 0) {
+    if (localStorage.length > 2) {
       for (var i = 0; i < correctAns.length; i++) {
         if (localStorage.getItem(i) === null) {
           score += 0;
@@ -23,9 +24,55 @@ const Feedback = () => {
       }
       localStorage.clear();
       console.log(score);
+
+      const test1 = document.getElementById("test1").value;
+      const testp = document.getElementById("testp").value;
+
+      axios
+        .post("http://127.0.0.1:8000/api/feedback", {
+          name: userData.name,
+          email: userData.email,
+          round: userData.round,
+          designation: userData.designation,
+          star1: rating,
+          test1: test1,
+          starp: rating1,
+          testp: testp,
+        })
+        .then((res) => {
+          if (res.data.status === 200) {
+            navigate("/ScorePage", {
+              state: { userData: userData, score: score },
+            });
+          }
+        })
+        .catch((err) => console.log(err));
       //navigate("/Score", { state: { userData: userData, score: score } });
     } else {
       console.log(prevCalcScore);
+
+      const test1 = document.getElementById("test1").value;
+      const testp = document.getElementById("testp").value;
+
+      axios
+        .post("http://127.0.0.1:8000/api/feedback", {
+          name: userData.name,
+          email: userData.email,
+          round: userData.round,
+          designation: userData.designation,
+          star1: rating,
+          test1: test1,
+          starp: rating1,
+          testp: testp,
+        })
+        .then((res) => {
+          if (res.data.status === 200) {
+            navigate("/ScorePage", {
+              state: { userData: userData, score: prevCalcScore },
+            });
+          }
+        })
+        .catch((err) => console.log(err));
     }
   };
   const [rating, setRating] = useState(0);
@@ -35,12 +82,10 @@ const Feedback = () => {
   const handleRating = (rate) => {
     setRating(parseInt(rate));
     localStorage.setItem("rate1", parseInt(rate));
-    console.log(localStorage.getItem("rate1"));
   };
   const handleRating1 = (rate1) => {
     setRating1(parseInt(rate1));
     localStorage.setItem("rate2", parseInt(rate1));
-    console.log(localStorage.getItem("rate2"));
   };
 
   const handleReset = () => {
@@ -60,8 +105,8 @@ const Feedback = () => {
             </li>
             <li>
               <p className="text-[4.75vmin] md:text-[3.5vmin] pb-2 text-bodytext font-medium mt-3 pr-1 pl-1">
-                How do you rate the overall arrangements and guest lectures
-                orgnized by IIMT IIC?
+                How do you rate the arrangements & guest lectures orgnized by
+                IIMT IIC?
               </p>
             </li>
             <li>
@@ -76,14 +121,15 @@ const Feedback = () => {
             <li>
               <div className="starHolder1 flex justify-center space-x-3 lg:space-x-10">
                 <textarea
+                  id="test1"
                   className="w-[90vw] lg:w-[67vmin] p-2"
-                  placeholder="Enter testinomials..."
+                  placeholder="Enter your testinomials..."
                 ></textarea>
               </div>
             </li>
             <li>
               <p className="text-[4.75vmin] md:text-[3.5vmin] pb-2 text-bodytext font-medium mt-3 pr-1 pl-1">
-                How do you rate the software platform of QuizDrobe and the
+                How do you rate the software platform QuizDrobe and the
                 management of the event?
               </p>
             </li>
@@ -98,8 +144,9 @@ const Feedback = () => {
             </li>
             <li>
               <textarea
+                id="testp"
                 className="w-[90vw] lg:w-[67vmin] p-2"
-                placeholder="Enter testinomials..."
+                placeholder="Enter your testinomials..."
               ></textarea>
             </li>
             <li>
