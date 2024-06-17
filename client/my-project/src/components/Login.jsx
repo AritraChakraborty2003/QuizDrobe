@@ -19,7 +19,7 @@ const Login = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/users")
+      .get(`${import.meta.env.VITE_APP_API_URL}` + "users")
       .then((res) => {
         setRound(res.data[0].round);
         setData(res.data);

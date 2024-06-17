@@ -34,7 +34,7 @@ const Feedback = () => {
         alert("All fields must be filled to proceed");
       } else {
         axios
-          .post("http://127.0.0.1:8000/api/feedback", {
+          .post(`${import.meta.env.VITE_APP_API_URL}` + "feedback", {
             name: userData.name,
             email: userData.email,
             round: userData.round,
@@ -47,7 +47,7 @@ const Feedback = () => {
           .then((res) => {
             if (res.data.status === 200) {
               axios
-                .post("http://127.0.0.1:8000/api/score", {
+                .post(`${import.meta.env.VITE_APP_API_URL}` + "score", {
                   name: userData.name,
                   email: userData.email,
                   designation: userData.designation,
@@ -80,7 +80,7 @@ const Feedback = () => {
         alert("All fields must be filled to proceed");
       } else {
         axios
-          .post("http://127.0.0.1:8000/api/feedback", {
+          .post(`${import.meta.env.VITE_APP_API_URL}` + "feedback", {
             name: userData.name,
             email: userData.email,
             round: userData.round,
@@ -93,7 +93,7 @@ const Feedback = () => {
           .then((res) => {
             if (res.data.status === 200) {
               axios
-                .post("http://127.0.0.1:8000/api/score", {
+                .post(`${import.meta.env.VITE_APP_API_URL}` + "score", {
                   name: userData.name,
                   email: userData.email,
                   designation: userData.designation,

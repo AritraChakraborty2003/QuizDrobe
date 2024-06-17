@@ -19,7 +19,7 @@ const CmsLogin = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/admin")
+      .get(`${import.meta.env.VITE_APP_API_URL}` + "admin")
       .then((res) => {
         setData(res.data);
       })

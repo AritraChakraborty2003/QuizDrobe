@@ -27,7 +27,7 @@ const Addadmin = () => {
     e.preventDefault();
 
     axios
-      .post("http://127.0.0.1:8000/api/admin", {
+      .post(`${import.meta.env.VITE_APP_API_URL}` + "admin", {
         name: name,
         email: email,
         password: password,

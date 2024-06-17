@@ -23,7 +23,7 @@ const AddRound = () => {
       .then((response) => {
         if (response.data.status === 200) {
           axios
-            .post("http://127.0.0.1:8000/api/rounds", {
+            .post(`${import.meta.env.VITE_APP_API_URL}` + "rounds", {
               round: round,
               questions: questions,
               type: roundData[round],

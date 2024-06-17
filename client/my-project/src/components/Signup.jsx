@@ -40,7 +40,7 @@ const Signup = () => {
     if (name != "" || email != "" || designation != "" || password != "") {
       if (cnfPassword === password) {
         axios
-          .post("http://127.0.0.1:8000/api/users", {
+          .post(`${import.meta.env.VITE_APP_API_URL}` + "users", {
             name: name,
             email: email,
             designation: designation,

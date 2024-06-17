@@ -9,7 +9,7 @@ const Rules = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/questions/")
+      .get(`${import.meta.env.VITE_APP_API_URL}` + "questions")
       .then((res) => {
         setData(res.data);
       })

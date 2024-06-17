@@ -15,7 +15,7 @@ const AddQuestions = () => {
     const question = document.getElementById("question").value;
 
     axios
-      .post("http://127.0.0.1:8000/api/questions", {
+      .post(`${import.meta.env.VITE_APP_API_URL}` + "questions", {
         round: round,
         opt1: opt1,
         opt2: opt2,
