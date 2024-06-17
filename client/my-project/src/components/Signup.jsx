@@ -69,7 +69,7 @@ const Signup = () => {
 
   return (
     <>
-      <div className="LargeDisplayArea hidden lg:block ">
+      <div className="LargeDisplayArea hidden lg:block h-screen ">
         <div className="flex justify-center pb-2">
           <div className="flex justify-center items-center mt-[2vh] bg-backQuiz rounded-[3vmin] w-[98vw]">
             <div className="logoPart w-[44vw] h-[96vh]   font-roboto flex flex-col justify-center items-center">
