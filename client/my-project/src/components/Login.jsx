@@ -144,8 +144,8 @@ const Login = () => {
         </div>
       </div>
       <div className="block lg:hidden">
-        <div className="bg-gradient-to-bl from-background to-backQuiz  lg:bg-gradient-to-tl lg:from-background lg:to-background  main  h-screen w-[100vw] flex justify-center items-center">
-          <div className="bg-gradient-to-bl from-background to-backQuiz  lg:bg-gradient-to-tl lg:from-background lg:to-background font-roboto flex flex-col justify-center items-center">
+        <div className="bg-backQuiz main  h-screen w-[100vw] flex justify-center items-center">
+          <div className="bg-backQuiz font-roboto flex flex-col justify-center items-center">
             <form
               id="form"
               className="flex flex-col justify-center items-center mt-2 space-y-7"
