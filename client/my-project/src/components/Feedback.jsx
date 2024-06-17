@@ -5,8 +5,8 @@ import React from "react";
 import { Rating } from "react-simple-star-rating";
 import { useState } from "react";
 const Feedback = () => {
-  /*const location = useLocation();
-  const navigate = useNavigate();
+  const location = useLocation();
+  //const navigate = useNavigate();
   const correctAns = location.state.correctAns;
   const userData = location.state.userData;
   const prevCalcScore = location.state.score;
@@ -27,7 +27,7 @@ const Feedback = () => {
     } else {
       console.log(prevCalcScore);
     }
-    */
+  };
   const [rating, setRating] = useState(0);
   const [rating1, setRating1] = useState(0);
 
@@ -50,7 +50,7 @@ const Feedback = () => {
 
   return (
     <>
-      <div className="mainHolder h-screen flex justify-center items-center">
+      <div className="mainHolder h-screen flex justify-center items-center font-poppins">
         <div className="main  h-screen w-[100vw] lg:h-[96vh] lg:w-[98vw] p-2 bg-backQuiz lg:rounded-[4vmin] ">
           <ul className="flex flex-col justify-center items-center p-3s space-y-2 lg:space-y-4">
             <li>
@@ -103,7 +103,10 @@ const Feedback = () => {
               ></textarea>
             </li>
             <li>
-              <button className="p-2 bg-bodytext text-white w-[30vw] lg:w-[15vmin] mt-5 lg:mt-3">
+              <button
+                className="p-2 bg-bodytext text-white w-[30vw] lg:w-[15vmin] mt-5 lg:mt-3"
+                onClick={onSubmit}
+              >
                 Next
               </button>
             </li>

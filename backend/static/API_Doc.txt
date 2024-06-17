@@ -1,21 +1,21 @@
-APIs
+APIs                                       DONE
 
-GET api/users/ - Get List of all users
-GET api/users/data/email - Get user with email=email
-GET api/feedback/ - Get List of feedback
-GET api/feedback/email  - Get feedback with email=email
+GET api/users/ - Get List of all users  - Y
+GET api/users/data/?email= - Get user with email=email - Y
+GET api/feedback/ - Get List of feedback - Y
+GET api/feedback/data/?email=  - Get feedback with email=email - Y
 GET api/score - Get List of all users with scores overall
-GET api/score/email - Get score of user with email=email
+GET api/score/data/?email= - Get score of user with email=email
 GET api/score/round - GET score of a specific round
-GET api/rounds - GET round details of a round
+GET api/rounds - GET round details of a round -Y
 
-POST api/users/ - POST data of user
+POST api/users/ - POST data of user - Y
 POST api/feedback/ - POST feedback
 POST api/score - POST overall Score
 POST api/score/round - POST score of user in a round
-POST api/rounds - POST round details in an API
+POST api/rounds - POST round details in an API - Y
 
 
-PATCH api/users/ - UPDATE round and questions API 
+PATCH api/users/ - UPDATE round and questions API - Y
 
 
