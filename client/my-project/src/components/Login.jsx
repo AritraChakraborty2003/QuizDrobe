@@ -143,14 +143,14 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className="block lg:hidden">
-        <div className="bg-backQuiz main  h-screen w-[100vw] flex justify-center items-center">
-          <div className="bg-backQuiz font-roboto flex flex-col justify-center items-center pt-4">
+      <div className="block lg:hidden h-screen">
+        <div className="bg-backQuiz main   w-[100vw] flex justify-center items-center">
+          <div className="bg-backQuiz  font-roboto flex flex-col justify-center items-center pt-4">
             <form
               id="form"
               className="flex flex-col justify-center items-center mt-2 space-y-7"
             >
-              <div className="mt-[7vmin] from-background to-backQuiz  lg:bg-gradient-to-tl lg:from-background lg:to-background font-roboto box  md:mt-4 h-[46vmin] md:h-[30vmin] md:w-[65vmin] w-[99vw] flex flex-col justify-center items-center p-2">
+              <div className="mt-[7vmin] from-background to-backQuiz  lg:bg-gradient-to-tl lg:from-background lg:to-background font-roboto box  md:mt-4 h-[40vmin] md:h-[30vmin] md:w-[65vmin] w-[99vw] flex flex-col justify-center items-center p-2">
                 <img
                   src="./VDIcon1.png"
                   className="max-w-full max-h-full object-contain"

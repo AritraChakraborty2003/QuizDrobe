@@ -198,8 +198,8 @@ const Signup = () => {
         </div>
       </div>
 
-      <div className="block lg:hidden">
-        <div className="h-screen bg-gradient-to-bl from-[#9ed8ff] to-backQuiz  lg:bg-gradient-to-tr lg:from-background lg:to-background font-roboto main w-[100vw] flex justify-center items-center">
+      <div className="block lg:hidden h-screen">
+        <div className="bg-gradient-to-bl from-[#9ed8ff] to-backQuiz  lg:bg-gradient-to-tr lg:from-background lg:to-background font-roboto main w-[100vw] flex justify-center items-center">
           <div className="flex flex-col justify-center items-center mt-1">
             <div className="mt-4 from-background to-backQuiz   lg:bg-gradient-to-tl lg:from-background lg:to-background font-roboto box  md:mt-4 h-[42vmin] md:h-[30vmin] md:w-[65vmin] w-[85vw] flex flex-col justify-center items-center p-2">
               <img
