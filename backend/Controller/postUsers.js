@@ -9,6 +9,7 @@ const postUser = () => {
     const round = req.body.round;
     const questions = req.body.questions;
     const ip = req.ip;
+    const time = req.body.time;
     const oScore = req.body.oScore;
 
     const user = new users({
@@ -19,6 +20,7 @@ const postUser = () => {
       password: password,
       round: round,
       questions: questions,
+      time: time,
       ip: ip,
       oScore: oScore,
     });

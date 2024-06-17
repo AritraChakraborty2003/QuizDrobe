@@ -4,15 +4,15 @@ GET api/users/ - Get List of all users SET oScore=0  - Y
 GET api/users/data?email= - Get user with email=email - Y
 GET api/feedback/ - Get List of feedback - Y
 GET api/feedback/data?email=  - Get feedback with email=email - Y
-GET api/score - to get score  with rounds
-GET api/score/data?email= - Get overall score of user with email=email
-GET api/score/data?email=''&round='' - Get score of a user with email=emal 
+GET api/score - to get score  with rounds - Y 
+GET api/score/data?email= - Get overall score of user with email=email - Y
+GET api/score/data?email=''&round='' - Get score of a user with email=email - Y 
                                        at a specific round
 GET api/rounds - GET round details of a round -Y
 
 POST api/users/ - POST data of user - Y
 POST api/feedback/ - POST feedback - Y
-POST api/score/ - POST score of user in a round
+POST api/score/ - POST score of user in a round 
 POST api/rounds - POST round details in an API - Y
 
 

@@ -48,6 +48,7 @@ const Signup = () => {
             password: password,
             round: 1,
             questions: 5,
+            time: 0,
             oScore: 0,
           })
           .then((response) => {

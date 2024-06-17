@@ -30,6 +30,10 @@ const usersSchema = mongoose.Schema(
       type: Number,
       require: true,
     },
+    time: {
+      type: Number,
+      require: true,
+    },
     ip: {
       type: String,
       require: true,
