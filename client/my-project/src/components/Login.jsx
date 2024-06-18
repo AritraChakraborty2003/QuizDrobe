@@ -52,23 +52,50 @@ const Login = () => {
     let control = false;
     data.map((val) => {
       if (val.email === email && val.password === password) {
-        data1.map((val) => {
-          if (
-            val.email === email &&
-            val.round === round.toString() &&
-            val.attempted === "true"
-          ) {
-            alert("You already attempted the quiz");
-          } else {
-            control = true;
-            const name = val.name;
-            localStorage.setItem("email", email);
-            localStorage.setItem("password", password);
-            localStorage.setItem("name", name);
-            localStorage.setItem("loggedin", true);
-            navigate("/rules", { state: { data: val } });
-          }
-        });
+        if (data1.length > 0) {
+          data1.map((val) => {
+            if (
+              val.email === email &&
+              val.round === round.toString() &&
+              val.attempted === "true"
+            ) {
+              alert("You already attempted the quiz");
+            } else {
+              control = true;
+              const name = val.name;
+              localStorage.setItem("email", email);
+              localStorage.setItem("password", password);
+              localStorage.setItem("name", name);
+              localStorage.setItem("loggedin", true);
+              navigate("/rules", { state: { data: val } });
+            }
+          });
+          data1.map((val) => {
+            if (
+              val.email === email &&
+              val.round === round.toString() &&
+              val.attempted === "true"
+            ) {
+              alert("You already attempted the quiz");
+            } else {
+              control = true;
+              const name = val.name;
+              localStorage.setItem("email", email);
+              localStorage.setItem("password", password);
+              localStorage.setItem("name", name);
+              localStorage.setItem("loggedin", true);
+              navigate("/rules", { state: { data: val } });
+            }
+          });
+        } else {
+          control = true;
+          const name = val.name;
+          localStorage.setItem("email", email);
+          localStorage.setItem("password", password);
+          localStorage.setItem("name", name);
+          localStorage.setItem("loggedin", true);
+          navigate("/rules", { state: { data: val } });
+        }
       }
     });
     if (!control) {

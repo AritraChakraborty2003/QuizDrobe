@@ -9,7 +9,7 @@ const ScorePage = () => {
 
   const onSubmitHandle = (e) => {
     e.preventDefault();
-
+    localStorage.clear();
     axios
       .post(`${import.meta.env.VITE_APP_API_URL}` + "attempted", {
         name: location.state.userData.name,

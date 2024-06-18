@@ -68,6 +68,7 @@ const Feedback = () => {
                       )
                       .then((res) => {
                         if (res.data.status === 200) {
+                          localStorage.clear();
                           navigate("/ScorePage", {
                             state: { score: score, userData: userData },
                           });
@@ -127,6 +128,7 @@ const Feedback = () => {
                       )
                       .then((res) => {
                         if (res.data.status === 200) {
+                          localStorage.clear();
                           navigate("/ScorePage", {
                             state: { score: prevCalcScore, userData: userData },
                           });
