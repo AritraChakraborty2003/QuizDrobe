@@ -32,7 +32,7 @@ app.use("/api/rounds/", roundsRouter);
 app.use("/api/feedback", feedBackRouter);
 app.use("/api/score", ScoreRouter);
 app.use("/api/attempted", AttemptedRouter);
-app.use("/api/leaderbpard", leaderboardRouter);
+app.use("/api/leaderboard", leaderboardRouter);
 /* Starting of the express server*/
 app.listen(`${process.env.PORT}`, () => {
   console.log("Backend Connected");
