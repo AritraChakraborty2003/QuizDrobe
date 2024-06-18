@@ -6,7 +6,19 @@ const AddLeaderboard = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     const choice = document.getElementById("choice").value;
-    console.log(choice);
+    axios
+      .patch(`${import.meta.env.VITE_APP_API_URL}` + "leaderboard", {
+        show: choice,
+      })
+      .then((response) => {
+        if (response.data.status === 200) {
+          document.getElementById("success").innerHTML =
+            "Data Added Successfully";
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <>
@@ -28,7 +40,7 @@ const AddLeaderboard = () => {
               <h1 id="success" className="text-5xl font-bold pb-2"></h1>
               <ul className="space-y-4 mt-5">
                 <li>
-                  <p>Choose Round</p>
+                  <p className="text-4xl pb-2">Display Leaderboard:</p>
                 </li>
                 <li>
                   <select id="choice" className="w-[93vw] lg:w-[70vmin] p-2">
