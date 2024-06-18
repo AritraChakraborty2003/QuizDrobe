@@ -58,9 +58,22 @@ const Feedback = () => {
                 })
                 .then((res) => {
                   if (res.data.status === 200) {
-                    navigate("/ScorePage", {
-                      state: { score: score, userData: userData },
-                    });
+                    axios
+                      .patch(
+                        `${import.meta.env.VITE_APP_API_URL}` + "users/Oscore",
+                        {
+                          score: score,
+                          email: userData.email,
+                        }
+                      )
+                      .then((res) => {
+                        if (res.data.status === 200) {
+                          navigate("/ScorePage", {
+                            state: { score: score, userData: userData },
+                          });
+                        }
+                      })
+                      .catch((err) => console.log(err));
                   }
                 })
                 .catch((err) => console.log(err));
@@ -104,9 +117,22 @@ const Feedback = () => {
                 })
                 .then((res) => {
                   if (res.data.status === 200) {
-                    navigate("/ScorePage", {
-                      state: { score: prevCalcScore, userData: userData },
-                    });
+                    axios
+                      .patch(
+                        `${import.meta.env.VITE_APP_API_URL}` + "users/Oscore",
+                        {
+                          score: prevCalcScore,
+                          email: userData.email,
+                        }
+                      )
+                      .then((res) => {
+                        if (res.data.status === 200) {
+                          navigate("/ScorePage", {
+                            state: { score: prevCalcScore, userData: userData },
+                          });
+                        }
+                      })
+                      .catch((err) => console.log(err));
                   }
                 })
                 .catch((err) => console.log(err));

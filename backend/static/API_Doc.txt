@@ -9,12 +9,13 @@ GET api/score/data?email= - Get overall score of user with email=email - Y
 GET api/score/data?email=''&round='' - Get score of a user with email=email - Y 
                                        at a specific round
 GET api/rounds - GET round details of a round -Y
+GET api/attempted - GET attempted or not data of a user
 
 POST api/users/ - POST data of user - Y
 POST api/feedback/ - POST feedback - Y
-POST api/score/ - POST score of user in a round 
+POST api/score/ - POST score of user in a round  - Y
 POST api/rounds - POST round details in an API - Y
-
+POST api/attempted - POST attempted or not data of user
 
 PATCH api/users/ - UPDATE round and questions API - Y
 PATCH api/users/Oscore - Y

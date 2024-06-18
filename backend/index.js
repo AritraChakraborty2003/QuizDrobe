@@ -3,6 +3,7 @@ import { adminRouter } from "./Routes/adminRouter.js";
 import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
+import { AttemptedRouter } from "./Routes/AttemptedRouter.js";
 import { roundsRouter } from "./Routes/roundsRouter.js";
 import { logResReq } from "./Middlewares/logResReq.js";
 import { genRouter } from "./Routes/genRouter.js";
@@ -29,7 +30,7 @@ app.use("/api/admin", adminRouter);
 app.use("/api/rounds/", roundsRouter);
 app.use("/api/feedback", feedBackRouter);
 app.use("/api/score", ScoreRouter);
-
+app.use("/api/attempted", AttemptedRouter);
 /* Starting of the express server*/
 app.listen(`${process.env.PORT}`, () => {
   console.log("Backend Connected");
