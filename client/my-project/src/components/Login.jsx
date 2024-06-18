@@ -17,6 +17,8 @@ const Login = () => {
   const [cnfPassword, setcnfPassword] = useState("");
   const [designation, setDesignation] = useState("");
   const [password, setPassword] = useState("");
+  const [show, setShow] = useState("");
+  const [dataLeader, setDataLeader] = useState([]);
 
   useEffect(() => {
     axios
@@ -33,6 +35,16 @@ const Login = () => {
       .get(`${import.meta.env.VITE_APP_API_URL}` + "attempted")
       .then((res) => {
         setData1(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    axios
+      .get(`${import.meta.env.VITE_APP_API_URL}` + "leaderboard")
+      .then((res) => {
+        setShow(dataLeader[0].show);
+        setDataLeader(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -90,9 +102,9 @@ const Login = () => {
     }
   };
   console.log(data);
+
   return (
     <>
-      {console.log(round)}
       <div className="LargeDisplayArea hidden lg:block ">
         <div className="flex justify-center">
           <div className="flex justify-center items-center mt-[2vh] bg-backQuiz rounded-[3vmin] w-[98vw]">
@@ -100,9 +112,15 @@ const Login = () => {
               <img src="./VD11.png"></img>
             </div>
             <div className="formPart flex flex-col justify-center items-start w-[54vw]  h-[96vh]   font-roboto ">
-              <p className="text-center text-[12vmin] md:text-[10vmin] text-bodytext font-medium mt-[6vmin]">
-                Log In...
-              </p>
+              {(show === "false" && (
+                <p className="text-center text-[12vmin] md:text-[10vmin] text-bodytext font-medium mt-[6vmin]">
+                  Log In...
+                </p>
+              )) || (
+                <p className="text-center text-[12vmin] md:text-[10vmin] text-bodytext font-medium mt-[6vmin]">
+                  Check Leaderboard...
+                </p>
+              )}
 
               <div>
                 <form id="form" className="">
@@ -143,30 +161,45 @@ const Login = () => {
                         }}
                       ></img>
                     </div>
-                    <input
-                      type="text"
-                      readOnly={true}
-                      className="bg-white rounded-[2.5vmin] flex space-x-2 w-[80vw] md:w-[77vmin] border-bodytext border-b-[4px] p-3"
-                      value={`Round  ${round}`}
-                    />
+
+                    {show === "false" && (
+                      <input
+                        type="text"
+                        readOnly={true}
+                        className="bg-white rounded-[2.5vmin] flex space-x-2 w-[80vw] md:w-[77vmin] border-bodytext border-b-[4px] p-3"
+                        value={`Round  ${round}`}
+                      />
+                    )}
                   </div>
                 </form>
 
                 <div className="w-[100vw] flex  flex-col gap-y-3 lg:gap-y-4 justify-center items-start">
-                  <button
-                    className="mt-7 lg:mt-5 bg-black  bg-white flex justify-center items-center
+                  {(show === "false" && (
+                    <button
+                      className="mt-7 lg:mt-5 bg-black  bg-white flex justify-center items-center
               w-[70vw] md:w-[20vw] p-3 text-maintext font-medium rounded-2xl "
-                    onClick={onSubmitHandle}
-                  >
-                    Login
-                  </button>
+                      onClick={onSubmitHandle}
+                    >
+                      Login
+                    </button>
+                  )) || (
+                    <button
+                      className="mt-7 lg:mt-5 bg-black  bg-bodytext flex justify-center items-center
+              w-[70vw] md:w-[20vw] p-3 text-white font-medium rounded-2xl "
+                      onClick={onSubmitHandle}
+                    >
+                      Leaderboard
+                    </button>
+                  )}
 
-                  <p className="text-bodytext font-medium mt-5">
-                    Don't Have an Account?...
-                    <span className="text-maintext font-bold">
-                      <a href="/">Signup</a>
-                    </span>
-                  </p>
+                  {show === "false" && (
+                    <p className="text-bodytext font-medium mt-5">
+                      Don't Have an Account?...
+                      <span className="text-maintext font-bold">
+                        <a href="/">Signup</a>
+                      </span>
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -191,9 +224,15 @@ const Login = () => {
                 ></img>
               </div>
 
-              <p className="text-[10vmin] md:text-[6vmin] text-bodytext font-medium mt-1">
-                Log In...
-              </p>
+              {(show === "false" && (
+                <p className="text-[10vmin] md:text-[6vmin] text-bodytext font-medium mt-1">
+                  Log In...
+                </p>
+              )) || (
+                <p className="text-[10vmin] md:text-[6vmin] text-bodytext font-medium mt-1">
+                  Check Leaderboard...
+                </p>
+              )}
               <input
                 type="email"
                 placeholder="Enter your email..."
@@ -228,27 +267,41 @@ const Login = () => {
                   }}
                 ></img>
               </div>
-              <input
-                type="text"
-                readOnly={true}
-                className="bg-buttonColor rounded-[2.5vmin] p-2 w-[80vw] mt-7 md:w-[60vmin] border-bodytext border-b-[4px]"
-                value={`Round  ${round}`}
-              />
+              {show === "false" && (
+                <input
+                  type="text"
+                  readOnly={true}
+                  className="bg-buttonColor rounded-[2.5vmin] p-2 w-[80vw] mt-7 md:w-[60vmin] border-bodytext border-b-[4px]"
+                  value={`Round  ${round}`}
+                />
+              )}
 
-              <button
-                className="bg-black  bg-buttonColor flex justify-center items-center
+              {(show === "false" && (
+                <button
+                  className="bg-black  bg-buttonColor flex justify-center items-center
               w-[70vw] md:w-[25vw] p-3 text-maintext font-medium rounded-2xl "
-                onClick={onSubmitHandle}
-              >
-                Login
-              </button>
+                  onClick={onSubmitHandle}
+                >
+                  Login
+                </button>
+              )) || (
+                <button
+                  className="mt-7 lg:mt-5 bg-black  bg-bodytext flex justify-center items-center
+              w-[70vw] md:w-[20vw] p-3 text-white font-medium rounded-2xl "
+                  onClick={onSubmitHandle}
+                >
+                  Leaderboard
+                </button>
+              )}
 
-              <p className="text-bodytext font-medium mt-5">
-                Don't Have an Account?...
-                <span className="text-maintext font-bold">
-                  <a href="/">Signup</a>
-                </span>
-              </p>
+              {show === false && (
+                <p className="text-bodytext font-medium mt-5">
+                  Don't Have an Account?...
+                  <span className="text-maintext font-bold">
+                    <a href="/">Signup</a>
+                  </span>
+                </p>
+              )}
             </form>
 
             <p className="mt-10  text-[4vmin] md:text-[2vmin] font-oxygen pb-2">
