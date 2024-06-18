@@ -13,6 +13,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   //const [showPassword1, setShowPassword1] = useState(false);
   const [email, setEmail] = useState("");
+  const [data1, setData1] = useState([]);
   const [cnfPassword, setcnfPassword] = useState("");
   const [designation, setDesignation] = useState("");
   const [password, setPassword] = useState("");
@@ -27,6 +28,15 @@ const Login = () => {
       .catch((err) => {
         console.log(err);
       });
+
+    axios
+      .get(`${import.meta.env.VITE_APP_API_URL}` + "attempted")
+      .then((res) => {
+        setData1(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   const onChangeemail = (e) => {
@@ -36,19 +46,29 @@ const Login = () => {
   const onChangepassword = (e) => {
     setPassword(e.target.value);
   };
-
+  console.log("data", data1);
   const onSubmitHandle = (e) => {
     e.preventDefault();
     let control = false;
     data.map((val) => {
       if (val.email === email && val.password === password) {
-        control = true;
-        const name = val.name;
-        localStorage.setItem("email", email);
-        localStorage.setItem("password", password);
-        localStorage.setItem("name", name);
-        localStorage.setItem("loggedin", true);
-        navigate("/rules", { state: { data: val } });
+        data1.map((val) => {
+          if (
+            val.email === email &&
+            val.round === round.toString() &&
+            val.attempted === "true"
+          ) {
+            alert("You already attempted the quiz");
+          } else {
+            control = true;
+            const name = val.name;
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+            localStorage.setItem("name", name);
+            localStorage.setItem("loggedin", true);
+            navigate("/rules", { state: { data: val } });
+          }
+        });
       }
     });
     if (!control) {

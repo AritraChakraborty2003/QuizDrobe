@@ -12,9 +12,9 @@ const ScorePage = () => {
 
     axios
       .post(`${import.meta.env.VITE_APP_API_URL}` + "attempted", {
-        name: location.userData.name,
-        email: location.userData.email,
-        round: location.userData.round,
+        name: location.state.userData.name,
+        email: location.state.userData.email,
+        round: location.state.userData.round,
         attempted: "true",
       })
       .then((response) => {

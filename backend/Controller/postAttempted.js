@@ -1,4 +1,4 @@
-import { attempts } from "../Model/Attempted";
+import { attempts } from "../Model/Attempted.js";
 
 const PostAttempts = () => {
   return (req, res) => {

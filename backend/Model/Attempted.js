@@ -14,7 +14,7 @@ const AttemptSchema = mongoose.Schema(
       type: String,
       require: true,
     },
-    attmpted: {
+    attempted: {
       type: String,
       require: true,
     },
