@@ -1,9 +1,31 @@
-import { useLocation } from "react-router-dom";
+import axios from "axios";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const ScorePage = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const score = location.state.score;
   const name = location.state.userData.name.split()[0];
+
+  const onSubmitHandle = (e) => {
+    e.preventDefault();
+
+    axios
+      .post(`${import.meta.env.VITE_APP_API_URL}` + "attempted", {
+        name: location.userData.name,
+        email: location.userData.email,
+        round: location.userData.round,
+        attempted: "true",
+      })
+      .then((response) => {
+        if (response.data.status === 200) {
+          navigate("/login");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <>
       <div className="LargeDisplayArea hidden lg:block ">
@@ -74,8 +96,11 @@ const ScorePage = () => {
               </p>
 
               <div className="btnHolder flex justify-center items-center">
-                <button className="p-3 bg-bodytext text-white text-[3.5vmin]">
-                  Go Back
+                <button
+                  className="p-3 bg-bodytext text-white text-[3.5vmin]"
+                  onClick={onSubmitHandle}
+                >
+                  Finish
                 </button>
               </div>
             </div>
@@ -151,8 +176,11 @@ const ScorePage = () => {
               </p>
 
               <div className="btnHolder flex justify-center items-center">
-                <button className="p-3 bg-bodytext text-white text-[3.5vmin]">
-                  Go Back
+                <button
+                  className="p-3 bg-bodytext text-white text-[3.5vmin]"
+                  onClick={onSubmitHandle}
+                >
+                  Finish
                 </button>
               </div>
             </div>
