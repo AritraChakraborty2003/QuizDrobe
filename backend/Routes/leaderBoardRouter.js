@@ -4,3 +4,5 @@ const leaderboardRouter = express.Router();
 
 leaderboardRouter.get("/");
 leaderboardRouter.patch("/");
+
+export { leaderboardRouter };
