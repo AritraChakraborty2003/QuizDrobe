@@ -11,7 +11,7 @@ GET api/score/data?email=''&round='' - Get score of a user with email=email - Y
 GET api/score/data?round='' - GET scores of user on specific rounds - Y
 GET api/rounds - GET round details of a round -Y
 GET api/attempted - GET attempted or not data of a user - Y
-
+GET api/leaderboard - GET data to show leaderboard or not
 
 
 POST api/users/ - POST data of user - Y
@@ -22,4 +22,4 @@ POST api/attempted - POST attempted or not data of user
 
 PATCH api/users/ - UPDATE round and questions API - Y
 PATCH api/users/Oscore - Y
-
+PATCH api/Leaderboard - Y
