@@ -46,47 +46,34 @@ const Login = () => {
   const onChangepassword = (e) => {
     setPassword(e.target.value);
   };
-  console.log("data", data1);
+  //const dObj = data.filter((product) => {
+  //product.email === email;
+  //});
   const onSubmitHandle = (e) => {
     e.preventDefault();
     let control = false;
     data.map((val) => {
       if (val.email === email && val.password === password) {
         if (data1.length > 0) {
-          data1.map((val) => {
-            if (
-              val.email === email &&
-              val.round === round.toString() &&
-              val.attempted === "true"
-            ) {
-              alert("You already attempted the quiz");
-            } else {
-              control = true;
-              const name = val.name;
-              localStorage.setItem("email", email);
-              localStorage.setItem("password", password);
-              localStorage.setItem("name", name);
-              localStorage.setItem("loggedin", true);
-              navigate("/rules", { state: { data: val } });
-            }
-          });
-          data1.map((val) => {
-            if (
-              val.email === email &&
-              val.round === round.toString() &&
-              val.attempted === "true"
-            ) {
-              alert("You already attempted the quiz");
-            } else {
-              control = true;
-              const name = val.name;
-              localStorage.setItem("email", email);
-              localStorage.setItem("password", password);
-              localStorage.setItem("name", name);
-              localStorage.setItem("loggedin", true);
-              navigate("/rules", { state: { data: val } });
-            }
-          });
+          const user1 = data1.filter(
+            (user) =>
+              user.email === email &&
+              user.round === round.toString() &&
+              user.attempted === "true"
+          );
+          console.log("data:", user1);
+          if (user1.length > 0) {
+            alert("You already attempted the quiz");
+            control = true;
+          } else {
+            control = true;
+            const name = val.name;
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+            localStorage.setItem("name", name);
+            localStorage.setItem("loggedin", true);
+            navigate("/rules", { state: { data: val } });
+          }
         } else {
           control = true;
           const name = val.name;

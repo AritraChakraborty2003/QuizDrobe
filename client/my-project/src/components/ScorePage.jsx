@@ -5,7 +5,8 @@ const ScorePage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const score = location.state.score;
-  const name = location.state.userData.name.split()[0];
+  const name = location.state.userData.name.split(" ")[0];
+  console.log(location.state.userData.name.split(" "));
 
   const onSubmitHandle = (e) => {
     e.preventDefault();
@@ -113,7 +114,7 @@ const ScorePage = () => {
           <div className="flex flex-col justify-center items-center mt-1">
             <div className="flex flex-col items-center">
               <p className="text-[11vmin] pb-3 text-bodytext font-semibold">
-                Hey, <span className="text-[12vmin]">Aritra</span>
+                Hey, <span className="text-[12vmin]">{name}</span>
               </p>
 
               {score <= 25 && (

@@ -7,9 +7,12 @@ GET api/feedback/data?email=  - Get feedback with email=email - Y
 GET api/score - to get score  with rounds - Y 
 GET api/score/data?email= - Get overall score of user with email=email - Y
 GET api/score/data?email=''&round='' - Get score of a user with email=email - Y 
-                                       at a specific round
+                                        at a specific round
+GET api/score/data?round='' - GET scores of user on specific rounds - Y
 GET api/rounds - GET round details of a round -Y
-GET api/attempted - GET attempted or not data of a user
+GET api/attempted - GET attempted or not data of a user - Y
+
+
 
 POST api/users/ - POST data of user - Y
 POST api/feedback/ - POST feedback - Y
