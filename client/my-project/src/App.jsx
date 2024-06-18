@@ -13,6 +13,7 @@ import QuizBody from "./components/QuizBody";
 import Cms from "./components/Cms";
 import Addadmin from "./components/AddAdmin";
 import AddLeaderboard from "./components/AddLeaderboard";
+import LeaderboardLobby from "./components/LeaderboardLobby";
 function App() {
   return (
     <>
@@ -31,6 +32,10 @@ function App() {
           <Route path="/ScorePage" element={<ScorePage />}></Route>
           <Route path="/AddQuestions" element={<AddQuestions />}></Route>
           <Route path="/AddLeaderboard" element={<AddLeaderboard />}></Route>
+          <Route
+            path="/LeaderboardLobby"
+            element={<LeaderboardLobby />}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </>

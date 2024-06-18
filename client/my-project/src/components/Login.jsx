@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect } from "react";
@@ -43,7 +44,7 @@ const Login = () => {
     axios
       .get(`${import.meta.env.VITE_APP_API_URL}` + "leaderboard")
       .then((res) => {
-        setShow(dataLeader[0].show);
+        setShow(res.data[0].show);
         setDataLeader(res.data);
       })
       .catch((err) => {
@@ -99,6 +100,25 @@ const Login = () => {
     });
     if (!control) {
       alert("invalid credentials");
+    }
+  };
+
+  const onSubmitHandle1 = (e) => {
+    e.preventDefault();
+    let control = false;
+
+    const user = data.filter(
+      (user) => user.email === email && user.password === password
+    );
+
+    if (user.length > 0) {
+      control = true;
+      localStorage.setItem("leaderLogged", "true");
+      navigate("/LeaderboardLobby", { state: { userData: user } });
+    }
+
+    if (!control) {
+      alert("Invalid credentials");
     }
   };
   console.log(data);
@@ -186,7 +206,7 @@ const Login = () => {
                     <button
                       className="mt-7 lg:mt-5 bg-black  bg-bodytext flex justify-center items-center
               w-[70vw] md:w-[20vw] p-3 text-white font-medium rounded-2xl "
-                      onClick={onSubmitHandle}
+                      onClick={onSubmitHandle1}
                     >
                       Leaderboard
                     </button>
@@ -288,7 +308,7 @@ const Login = () => {
                 <button
                   className="mt-7 lg:mt-5 bg-black  bg-bodytext flex justify-center items-center
               w-[70vw] md:w-[20vw] p-3 text-white font-medium rounded-2xl "
-                  onClick={onSubmitHandle}
+                  onClick={onSubmitHandle1}
                 >
                   Leaderboard
                 </button>
