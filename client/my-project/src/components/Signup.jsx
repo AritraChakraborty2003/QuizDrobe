@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import "./signup.css";
 import { useNavigate } from "react-router-dom";
@@ -15,6 +15,30 @@ const Signup = () => {
   const [cnfPassword, setcnfPassword] = useState("");
   const [designation, setDesignation] = useState("");
   const [password, setPassword] = useState("");
+
+  const [data, setData] = useState([]);
+
+  const [dataip, setDataip] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_APP_API_URL}` + "users")
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    axios
+      .get(`${import.meta.env.VITE_APP_API_URL}`)
+      .then((res) => {
+        setDataip(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
   const onChangeinst = (e) => {
     setInst(e.target.value);
   };
@@ -39,29 +63,42 @@ const Signup = () => {
   const onSubmitHandle = (e) => {
     e.preventDefault();
     if (name != "" || email != "" || designation != "" || password != "") {
-      if (cnfPassword === password) {
-        axios
-          .post(`${import.meta.env.VITE_APP_API_URL}` + "users", {
-            name: name,
-            email: email,
-            designation: designation,
-            institute: inst,
-            password: password,
-            round: 1,
-            questions: 5,
-            time: 0,
-            oScore: 0,
-          })
-          .then((response) => {
-            if (response.data.status === 200) {
-              navigate("/login");
-            } else {
-              alert("Account not created");
-            }
-          })
-          .catch((error) => console.log(error));
+      const userData = data.filter((user) => {
+        user.email === email;
+      });
+      const userData1 = data.filter((user) => {
+        user.ip === dataip[0].ip;
+      });
+
+      if (userData.length > 0) {
+        alert("Already registered email");
+      } else if (userData1.length > 0) {
+        alert("Similar login ip detected with another email");
       } else {
-        alert("Entered password don't match");
+        if (cnfPassword === password) {
+          axios
+            .post(`${import.meta.env.VITE_APP_API_URL}` + "users", {
+              name: name,
+              email: email,
+              designation: designation,
+              institute: inst,
+              password: password,
+              round: 1,
+              questions: 5,
+              time: 0,
+              oScore: 0,
+            })
+            .then((response) => {
+              if (response.data.status === 200) {
+                navigate("/login");
+              } else {
+                alert("Account not created");
+              }
+            })
+            .catch((error) => console.log(error));
+        } else {
+          alert("Entered password don't match");
+        }
       }
     } else {
       alert("All fields are mandatory to fill");
