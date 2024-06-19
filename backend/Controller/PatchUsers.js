@@ -4,15 +4,18 @@ const PatchUsers = () => {
     const round = req.body.round;
     const questions = req.body.questions;
 
-    const filter = { round: parseInt(round) - 1 };
+    const roundVal = parseInt(round);
+    const qval = parseInt(questions);
 
     users
-      .updateMany(
-        {},
-        { $set: { round: round, questions: parseInt(questions) } }
-      )
-      .then((res) => {
-        console.log("Data updated", res);
+      .find({})
+      .then((val) => {
+        val.map((data) => {
+          data.round = roundVal;
+          data.questions = qval;
+
+          data.save();
+        });
         return res.status(200).send({ status: 200 });
       })
       .catch((err) => {
