@@ -63,16 +63,19 @@ const Signup = () => {
   const onSubmitHandle = (e) => {
     e.preventDefault();
     if (name != "" || email != "" || designation != "" || password != "") {
-      const userData = data.filter((user) => {
+      const userData1 = data.filter((user) => {
         user.email === email;
       });
-      const userData1 = data.filter((user) => {
+      const userData2 = data.filter((user) => {
         user.ip === dataip[0].ip;
       });
 
-      if (userData.length > 0) {
+      console.log(userData1);
+      console.log(userData2);
+
+      if (userData1.length > 0) {
         alert("Already registered email");
-      } else if (userData1.length > 0) {
+      } else if (userData2.length > 0) {
         alert("Similar login ip detected with another email");
       } else {
         if (cnfPassword === password) {
