@@ -31,7 +31,7 @@ const Signup = () => {
       });
 
     axios
-      .get(`${import.meta.env.VITE_APP_API_URL}`)
+      .get(`https://api.venturedrobe.online/`)
       .then((res) => {
         setDataip(res.data);
       })
