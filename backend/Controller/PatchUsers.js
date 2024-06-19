@@ -20,8 +20,8 @@ const PatchUsers = () => {
       .catch((err) => {
         console.log(err);
       });
+    return res.status(200).send({ status: 200 });
   };
-  return res.status(200).send({ status: 200 });
 };
 const PatchUsersID = () => {
   return (req, res) => {
