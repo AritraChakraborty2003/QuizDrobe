@@ -16,7 +16,7 @@ const AddRound = () => {
     const questions = document.getElementById("questions").value;
 
     axios
-      .patch(`${import.meta.env.VITE_APP_API_URL}`, {
+      .patch(`${import.meta.env.VITE_APP_API_URL}` + "users", {
         round: round,
         questions: questions,
       })
