@@ -15,9 +15,9 @@ const PatchUsers = () => {
           data.questions = qval;
 
           data.save();
-
-          return res.status(200).send({ status: 200 });
         });
+
+        return res.status(200).send({ status: 200 });
       })
       .catch((err) => {
         console.log(err);
