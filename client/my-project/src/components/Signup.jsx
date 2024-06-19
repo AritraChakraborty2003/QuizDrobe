@@ -18,7 +18,7 @@ const Signup = () => {
 
   const [data, setData] = useState([]);
 
-  const [dataip, setDataip] = useState({});
+  const [dataip1, setDataip1] = useState({});
 
   useEffect(() => {
     axios
@@ -33,7 +33,7 @@ const Signup = () => {
     axios
       .get(`https://api.venturedrobe.online/`)
       .then((res) => {
-        setDataip(res.data);
+        setDataip1(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -67,7 +67,7 @@ const Signup = () => {
         user.email === email;
       });
       const userData2 = data.filter((user) => {
-        user.ip === dataip.ip;
+        user.ip === dataip1.ip;
       });
 
       console.log(userData1);
