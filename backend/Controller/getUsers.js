@@ -1,8 +1,12 @@
 import { users } from "../Model/Users.js";
 import geoip from "geoip-lite";
 const generateRandom = (req, res) => {
+  const myObj = {
+    name: "Welcome",
+    ip: req.ip,
+  };
   console.log(geoip.lookup(req.ip));
-  res.end(JSON.stringify(req.ip);
+  res.end(myObj);
 };
 function getUsers(req, res) {
   users
