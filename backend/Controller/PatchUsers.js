@@ -4,18 +4,20 @@ const PatchUsers = () => {
     const round = req.body.round;
     const questions = req.body.questions;
 
-    const filter = { round: { $lte: parseInt(round) } };
+    const filter = { round: parseInt(round) - 1 };
 
     users
-      .updateMany(filter, { $set: { round, questions } })
+      .updateMany(
+        {},
+        { $set: { round: round, questions: parseInt(questions) } }
+      )
       .then((res) => {
         console.log("Data updated", res);
+        return res.status(200).send({ status: 200 });
       })
       .catch((err) => {
         console.log(err);
       });
-
-    return res.status(200).send({ status: 200 });
   };
 };
 const PatchUsersID = () => {
