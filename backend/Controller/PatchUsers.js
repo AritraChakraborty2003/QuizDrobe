@@ -6,7 +6,7 @@ const PatchUsers = () => {
 
     const roundVal = parseInt(round);
     const qval = parseInt(questions);
-
+    console.log(roundVal);
     users
       .find({})
       .then((val) => {
