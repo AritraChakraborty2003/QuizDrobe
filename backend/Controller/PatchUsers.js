@@ -6,7 +6,7 @@ const PatchUsers = () => {
 
     const roundVal = parseInt(round);
     const qval = parseInt(questions);
-    console.log(roundVal);
+
     users
       .find({})
       .then((val) => {
@@ -16,12 +16,12 @@ const PatchUsers = () => {
 
           data.save();
         });
-        return res.status(200).send({ status: 200 });
       })
       .catch((err) => {
         console.log(err);
       });
   };
+  return res.status(200).send({ status: 200 });
 };
 const PatchUsersID = () => {
   return (req, res) => {
