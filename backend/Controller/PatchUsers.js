@@ -7,6 +7,8 @@ const PatchUsers = () => {
     const roundVal = parseInt(round);
     const qval = parseInt(questions);
 
+    console.log("In Backend");
+
     users
       .find({})
       .then((val) => {
