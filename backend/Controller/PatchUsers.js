@@ -15,12 +15,13 @@ const PatchUsers = () => {
           data.questions = qval;
 
           data.save();
+
+          return res.status(200).send({ status: 200 });
         });
       })
       .catch((err) => {
         console.log(err);
       });
-    return res.status(200).send({ status: 200 });
   };
 };
 const PatchUsersID = () => {
