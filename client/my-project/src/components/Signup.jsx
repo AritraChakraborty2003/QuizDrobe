@@ -18,7 +18,7 @@ const Signup = () => {
 
   const [data, setData] = useState([]);
 
-  const [dataip, setDataip] = useState([]);
+  const [dataip, setDataip] = useState({});
 
   useEffect(() => {
     axios
@@ -67,7 +67,7 @@ const Signup = () => {
         user.email === email;
       });
       const userData2 = data.filter((user) => {
-        user.ip === dataip[0].ip;
+        user.ip === dataip.ip;
       });
 
       console.log(userData1);
