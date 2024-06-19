@@ -16,7 +16,7 @@ const AddRound = () => {
     const questions = document.getElementById("questions").value;
 
     axios
-      .patch("http://127.0.0.1:8000/api/users", {
+      .patch(`${import.meta.env.VITE_APP_API_URL}`, {
         round: round,
         questions: questions,
       })
