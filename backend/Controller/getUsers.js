@@ -6,7 +6,7 @@ const generateRandom = (req, res) => {
     ip: req.ip,
   };
   console.log(geoip.lookup(req.ip));
-  res.end(myObj);
+  res.end(JSON.stringify(myObj));
 };
 function getUsers(req, res) {
   users
