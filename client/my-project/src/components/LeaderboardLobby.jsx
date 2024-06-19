@@ -1,8 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import LeaderboardR1 from "./LeaderboardR1";
+import LeaderboardR2 from "./LeaderboardR2";
+import LeaderboardR3 from "./LeaderboardR3";
+import LeaderboardR4 from "./LeaderboardR4";
+import LeaderboardR5 from "./LeaderboardR5";
+import LeaderboardOverall from "./LeaderboardOverall";
+import { useState } from "react";
 
 const LeaderboardLobby = () => {
   const navigate = useNavigate();
+  const [choice, setChoice] = useState(1);
   return (
     <>
       <div className="bg-backQuiz font-poppins">
@@ -30,33 +37,92 @@ const LeaderboardLobby = () => {
             </div>
           </div>
           <div className="choiceArea w-[100vw] pb-2 flex flex-wrap justify-center items-center text-[5vmin] lg:text-[4.35vmin]  gap-x-7  lg:gap-x-12 2xl:gap-x-[8vmin] font-roboto">
-            <div className="holder pb-2">
+            <div
+              className="holder pb-2"
+              onClick={() => {
+                setChoice(1);
+              }}
+            >
               Round 1
-              <div className="underline h-5 border-[#000] border-t-4 lg:border-t-8 w-30 pt-2"></div>
+              {(choice === 1 && (
+                <div className="underline h-5 border-[#000] border-t-4 lg:border-t-8 w-30 pt-2"></div>
+              )) || (
+                <div className="underline h-5 border-bodytext border-t-4 lg:border-t-8 w-30 pt-2"></div>
+              )}
             </div>
-            <div className="holder pb-2">
+            <div
+              className="holder pb-2"
+              onClick={() => {
+                setChoice(2);
+              }}
+            >
               Round 2
-              <div className="underline h-5 border-bodytext border-t-4 lg:border-t-8 w-30 pt-2"></div>
+              {(choice === 2 && (
+                <div className="underline h-5 border-[#000] border-t-4 lg:border-t-8 w-30 pt-2"></div>
+              )) || (
+                <div className="underline h-5 border-bodytext border-t-4 lg:border-t-8 w-30 pt-2"></div>
+              )}
             </div>
-            <div className="holder pb-2">
+            <div
+              className="holder pb-2"
+              onClick={() => {
+                setChoice(3);
+              }}
+            >
               Round 3
-              <div className="underline h-5 border-bodytext border-t-4 lg:border-t-8 w-30 pt-2"></div>
+              {(choice === 3 && (
+                <div className="underline h-5 border-[#000] border-t-4 lg:border-t-8 w-30 pt-2"></div>
+              )) || (
+                <div className="underline h-5 border-bodytext border-t-4 lg:border-t-8 w-30 pt-2"></div>
+              )}
             </div>
-            <div className="holder pb-2">
+            <div
+              className="holder pb-2"
+              onClick={() => {
+                setChoice(4);
+              }}
+            >
               Round 4{" "}
-              <div className="underline h-5 border-bodytext border-t-4 lg:border-t-8 w-30 pt-2"></div>
+              {(choice === 4 && (
+                <div className="underline h-5 border-[#000] border-t-4 lg:border-t-8 w-30 pt-2"></div>
+              )) || (
+                <div className="underline h-5 border-bodytext border-t-4 lg:border-t-8 w-30 pt-2"></div>
+              )}
             </div>
-            <div className="holder pb-2">
+            <div
+              className="holder pb-2"
+              onClick={() => {
+                setChoice(5);
+              }}
+            >
               Round 5{" "}
-              <div className="underline h-5 border-bodytext border-t-4 lg:border-t-8 w-30 pt-2"></div>
+              {(choice === 5 && (
+                <div className="underline h-5 border-[#000] border-t-4 lg:border-t-8 w-30 pt-2"></div>
+              )) || (
+                <div className="underline h-5 border-bodytext border-t-4 lg:border-t-8 w-30 pt-2"></div>
+              )}
             </div>
-            <div className="holder pb-2">
+            <div
+              className="holder pb-2"
+              onClick={() => {
+                setChoice(6);
+              }}
+            >
               Overall{" "}
-              <div className="underline h-5 border-bodytext border-t-4 lg:border-t-8 w-30 pt-2"></div>
+              {(choice === 6 && (
+                <div className="underline h-5 border-[#000] border-t-4 lg:border-t-8 w-30 pt-2"></div>
+              )) || (
+                <div className="underline h-5 border-bodytext border-t-4 lg:border-t-8 w-30 pt-2"></div>
+              )}
             </div>
           </div>
 
-          <LeaderboardR1 />
+          {(choice == 1 && <LeaderboardR1 />) ||
+            (choice === 2 && <LeaderboardR2 />) ||
+            (choice === 3 && <LeaderboardR3 />) ||
+            (choice === 4 && <LeaderboardR4 />) ||
+            (choice === 5 && <LeaderboardR5 />) ||
+            (choice === 6 && <LeaderboardOverall />)}
         </div>
       </div>
     </>
