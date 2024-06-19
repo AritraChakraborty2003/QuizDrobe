@@ -34,6 +34,8 @@ const Signup = () => {
       .get(`https://api.venturedrobe.online/`)
       .then((res) => {
         setDataip1(res.data);
+
+        console.log(dataip1);
       })
       .catch((err) => {
         console.log(err);
