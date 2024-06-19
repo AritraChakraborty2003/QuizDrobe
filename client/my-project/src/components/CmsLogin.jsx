@@ -10,6 +10,7 @@ const CmsLogin = () => {
   const [data, setData] = useState([]);
   //const [round, setRound] = useState(0);
   const [name, setName] = useState("");
+  const [showPassword1, setShowPassword1] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   //const [showPassword1, setShowPassword1] = useState(false);
   const [email, setEmail] = useState("");
@@ -179,16 +180,16 @@ const CmsLogin = () => {
                 />
                 <img
                   src="./rp.png"
-                  id="showicon"
+                  id="showicon1"
                   height={50}
                   width={50}
                   onClick={() => {
-                    if (showPassword === false) {
-                      setShowPassword(true);
-                      document.getElementById("showicon").src = "./sp.png";
+                    if (showPassword1 === false) {
+                      setShowPassword1(true);
+                      document.getElementById("showicon1").src = "./sp.png";
                     } else {
-                      setShowPassword(false);
-                      document.getElementById("showicon").src = "./rp.png";
+                      setShowPassword1(false);
+                      document.getElementById("showicon1").src = "./rp.png";
                     }
                   }}
                 ></img>
