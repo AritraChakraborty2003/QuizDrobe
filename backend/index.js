@@ -13,11 +13,16 @@ import DBConnectFunction from "./Connection/DbConnect.js";
 import { feedBackRouter } from "./Routes/feedBackRouter.js";
 import { ScoreRouter } from "./Routes/ScoreRouter.js";
 import { leaderboardRouter } from "./Routes/leaderBoardRouter.js";
-
+import requestIp from "request-ip";
+import geoip from "geoip-lite";
+import { isIPv6 } from "net";
 /* For Middlewares and dotenv config */
 dotenv.config();
 const app = express();
+
 app.use(cors());
+app.use(requestIp.mw());
+app.set("trust proxy", true);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 DBConnectFunction(`${process.env.MONGODB_URI}`);
