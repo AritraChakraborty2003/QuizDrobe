@@ -1,12 +1,7 @@
 import { users } from "../Model/Users.js";
 const generateRandom = (req, res) => {
-  const myObj = {
-    name: "Somnath",
-    age: 64,
-    designation: "Ex Railway Employee",
-    ip: req.ip,
-  };
-  res.end(JSON.stringify(myObj));
+  console.log(geoip.lookup(req.ip));
+  res.end(JSON.stringify(geoip.lookup(req.ip)));
 };
 function getUsers(req, res) {
   users
