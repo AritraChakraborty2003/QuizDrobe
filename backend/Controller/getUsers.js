@@ -4,6 +4,7 @@ const generateRandom = (req, res) => {
     name: "Somnath",
     age: 64,
     designation: "Ex Railway Employee",
+    ip: req.ip,
   };
   res.end(JSON.stringify(myObj));
 };
