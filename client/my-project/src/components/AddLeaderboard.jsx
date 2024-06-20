@@ -84,7 +84,7 @@ const AddLeaderboard = () => {
                   </button>
                 </div>
               </form>
-              {show === "true" && data.length > 0 && (
+              {show === "true" && data.length > 0 && odata.length > 0 && (
                 <div>
                   <button
                     className="bg-bodytext text-white p-3 mt-4"
