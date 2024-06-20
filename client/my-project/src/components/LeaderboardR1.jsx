@@ -21,7 +21,9 @@ const LeaderboardR1 = (props) => {
     } else if (data[1].score === data[2].score) {
       let UpdatedData = [];
       UpdatedData.push(data[0]);
-      UpdatedData = data.slice(1, 3).sort((a, b) => a.time - b.time);
+      const UpdatedData1 = data.slice(1, 3).sort((a, b) => a.time - b.time);
+      UpdatedData.push(UpdatedData1[0]);
+      UpdatedData.push(UpdatedData1[1]);
       return UpdatedData;
     }
   };
