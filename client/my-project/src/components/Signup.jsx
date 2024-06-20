@@ -34,8 +34,6 @@ const Signup = () => {
       .get(`https://api.venturedrobe.online/`)
       .then((res) => {
         setDataip1(res.data);
-
-        console.log(dataip1);
       })
       .catch((err) => {
         console.log(err);
@@ -64,6 +62,7 @@ const Signup = () => {
 
   const onSubmitHandle = (e) => {
     e.preventDefault();
+    console.log("Hi");
     if (name != "" || email != "" || designation != "" || password != "") {
       const userData1 = data.filter((user) => {
         user.email === email;
