@@ -63,17 +63,17 @@ const Signup = () => {
   const onSubmitHandle = (e) => {
     e.preventDefault();
     console.log("Hi");
+
+    const userData1 = data.filter((user1) => {
+      user1.email === email;
+    });
+    const userData2 = data.filter((user) => {
+      user.ip === dataip1.ip;
+    });
+
+    console.log(userData1);
+    console.log(userData2);
     if (name != "" || email != "" || designation != "" || password != "") {
-      const userData1 = data.filter((user) => {
-        user.email === email;
-      });
-      const userData2 = data.filter((user) => {
-        user.ip === dataip1.ip;
-      });
-
-      console.log(userData1);
-      console.log(userData2);
-
       /* if (userData1.length > 0) {
         alert("Already registered email");
       } else if (userData2.length > 0) {
