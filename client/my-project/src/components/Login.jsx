@@ -195,23 +195,13 @@ const Login = () => {
                 </form>
 
                 <div className="w-[100vw] flex  flex-col gap-y-3 lg:gap-y-4 justify-center items-start">
-                  {(show === "false" && (
-                    <button
-                      className="mt-7 lg:mt-5 bg-black  bg-white flex justify-center items-center
+                  <button
+                    className="mt-7 lg:mt-5 bg-black  bg-white flex justify-center items-center
               w-[70vw] md:w-[20vw] p-3 text-maintext font-medium rounded-2xl "
-                      onClick={onSubmitHandle}
-                    >
-                      Login
-                    </button>
-                  )) || (
-                    <button
-                      className="mt-7 lg:mt-5 bg-black  bg-bodytext flex justify-center items-center
-              w-[70vw] md:w-[20vw] p-3 text-white font-medium rounded-2xl "
-                      onClick={onSubmitHandle1}
-                    >
-                      Leaderboard
-                    </button>
-                  )}
+                    onClick={onSubmitHandle}
+                  >
+                    Login
+                  </button>
 
                   {show === "false" && (
                     <p className="text-bodytext font-medium mt-5">
