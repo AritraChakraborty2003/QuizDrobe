@@ -195,14 +195,12 @@ const Login = () => {
                     Login
                   </button>
 
-                  {show === "false" && (
-                    <p className="text-bodytext font-medium mt-5">
-                      Don't Have an Account?...
-                      <span className="text-maintext font-bold">
-                        <a href="/">Signup</a>
-                      </span>
-                    </p>
-                  )}
+                  <p className="text-bodytext font-medium mt-5">
+                    Don't Have an Account?...
+                    <span className="text-maintext font-bold">
+                      <a href="/">Signup</a>
+                    </span>
+                  </p>
                 </div>
               </div>
 
@@ -282,14 +280,12 @@ const Login = () => {
                 Login
               </button>
 
-              {show === false && (
-                <p className="text-bodytext font-medium mt-5">
-                  Don't Have an Account?...
-                  <span className="text-maintext font-bold">
-                    <a href="/">Signup</a>
-                  </span>
-                </p>
-              )}
+              <p className="text-bodytext font-medium mt-5">
+                Don't Have an Account?...
+                <span className="text-maintext font-bold">
+                  <a href="/">Signup</a>
+                </span>
+              </p>
             </form>
 
             <p className="mt-10  text-[4vmin] md:text-[2vmin] font-oxygen pb-2">
