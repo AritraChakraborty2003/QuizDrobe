@@ -40,7 +40,7 @@ const LeaderboardOverall = (props) => {
                 </div>
 
                 <li className="flex gap-x-4 ">
-                  Score: {FinalResult[0].oScore}/300
+                  Score: {FinalResult[0].oScore}/150
                 </li>
               </ul>
             </div>
@@ -70,7 +70,7 @@ const LeaderboardOverall = (props) => {
                 </div>
 
                 <li className="flex gap-x-4 ">
-                  Score: {FinalResult[1].oScore}/300
+                  Score: {FinalResult[1].oScore}/150
                 </li>
               </ul>
             </div>
@@ -100,7 +100,7 @@ const LeaderboardOverall = (props) => {
                 </div>
 
                 <li className="flex gap-x-4 ">
-                  Score: {FinalResult[2].oScore}/300
+                  Score: {FinalResult[2].oScore}/150
                 </li>
               </ul>
             </div>
