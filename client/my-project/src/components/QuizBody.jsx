@@ -190,7 +190,7 @@ const QuizBody = () => {
                             Change(localStorage.getItem("value"));
                           } else {
                             let ind = parseInt(localStorage.getItem("index"));
-                            if (ind < userData.questions) {
+                            if (ind < 5) {
                               ind = ind + 1;
                               Change(localStorage.getItem("value"));
                               localStorage.setItem("index", ind);
@@ -201,8 +201,7 @@ const QuizBody = () => {
                         Next
                       </button>
                     )) ||
-                      (parseInt(localStorage.getItem("index")) <
-                        userData.questions - 1 && (
+                      (parseInt(localStorage.getItem("index")) < 4 && (
                         <button
                           className="bg-[#F7FAFF] text-bodytext flex justify-center items-center p-2 w-[25vmin] md:w-[22vmin] rounded-[2vmin] text-[4vmin] md:text-[3vmin] mt-4 border-bodytext border-2"
                           onClick={() => {
@@ -211,7 +210,7 @@ const QuizBody = () => {
                             } else {
                               let ind = parseInt(localStorage.getItem("index"));
 
-                              if (ind < userData.questions) {
+                              if (ind < 5) {
                                 ind = ind + 1;
 
                                 Change(localStorage.getItem("value"));
@@ -224,8 +223,7 @@ const QuizBody = () => {
                         </button>
                       ))}
 
-                    {parseInt(localStorage.getItem("index")) ==
-                      userData.questions - 1 && (
+                    {parseInt(localStorage.getItem("index")) == 4 && (
                       <button
                         className="bg-bodytext text-white flex justify-center items-center p-2 w-[25vmin] md:w-[22vmin] rounded-[2vmin] text-[4vmin] md:text-[3vmin] mt-4 border-white border-2"
                         onClick={() => {

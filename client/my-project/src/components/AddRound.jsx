@@ -18,7 +18,6 @@ const AddRound = () => {
     axios
       .patch(`${import.meta.env.VITE_APP_API_URL}` + "users", {
         round: round,
-        questions: questions,
       })
       .then((response) => {
         if (response.data.status === 200) {

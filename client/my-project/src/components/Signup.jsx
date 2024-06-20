@@ -64,7 +64,7 @@ const Signup = () => {
 
   const onSubmitHandle = (e) => {
     e.preventDefault();
-    if (name != "" || email != "" || designation != "" || password != "") {
+    if (name != "" || email != "" || password != "") {
       const userData1 = data.filter((user) => user.email === email);
       /*const userData2 = data.filter((user) => {
         user.ip === dataip1.ip;
@@ -81,12 +81,9 @@ const Signup = () => {
             .post(`${import.meta.env.VITE_APP_API_URL}` + "users", {
               name: name,
               email: email,
-              designation: designation,
               institute: inst,
               password: password,
               round: 1,
-              questions: 5,
-              time: 0,
               oScore: 0,
             })
             .then((response) => {
@@ -137,14 +134,6 @@ const Signup = () => {
                       id="email"
                       className="bg-white rounded-[2.5vmin]  p-2 2xl:p-3 w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]"
                       onChange={onChangeemail}
-                    />
-                    <input
-                      type="text"
-                      name="designation"
-                      id="designation"
-                      placeholder="Enter your designation..."
-                      className="bg-white rounded-[2.5vmin] p-2 2xl:p-3 w-[80vw] md:w-[44vw] border-bodytext border-b-[4px]"
-                      onChange={onChangedesig}
                     />
 
                     <input
@@ -268,14 +257,7 @@ const Signup = () => {
                   className="bg-buttonColor rounded-[2.5vmin]  p-2 w-[80vw] md:w-[87vmin] border-bodytext border-b-[3.75px]"
                   onChange={onChangeemail}
                 />
-                <input
-                  type="text"
-                  name="designation"
-                  id="designation"
-                  placeholder="Enter your designation..."
-                  className="bg-buttonColor rounded-[2.5vmin] p-2 w-[80vw] md:w-[87vmin] border-bodytext border-b-[3.75px]"
-                  onChange={onChangedesig}
-                />
+
                 <input
                   type="text"
                   name="institute"

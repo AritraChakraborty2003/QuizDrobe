@@ -26,7 +26,6 @@ const Login = () => {
     axios
       .get(`${import.meta.env.VITE_APP_API_URL}` + "users")
       .then((res) => {
-        setRound(res.data[0].round);
         setData(res.data);
       })
       .catch((err) => {
