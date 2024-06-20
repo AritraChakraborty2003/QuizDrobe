@@ -13,6 +13,8 @@ const LeaderboardLobby = () => {
   const data = location.state.data;
   const odata = location.state.odata;
 
+  console.log(data);
+
   return (
     <>
       <div className="bg-backQuiz font-poppins">
