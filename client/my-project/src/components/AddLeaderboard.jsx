@@ -85,16 +85,19 @@ const AddLeaderboard = () => {
                 </div>
               </form>
               {show === "true" && data.length > 0 && (
-                <button
-                  className="bg-bodytext text-white p-3 mt-4"
-                  onClick={() => {
-                    navigate("/LeaderboardLobby", {
-                      state: { data: data, odata: odata },
-                    });
-                  }}
-                >
-                  Check Leaderboard
-                </button>
+                <div>
+                  {data}
+                  <button
+                    className="bg-bodytext text-white p-3 mt-4"
+                    onClick={() => {
+                      navigate("/LeaderboardLobby", {
+                        state: { data: data, odata: odata },
+                      });
+                    }}
+                  >
+                    Check Leaderboard
+                  </button>
+                </div>
               )}
             </div>
           </div>
