@@ -64,11 +64,11 @@ const Signup = () => {
     e.preventDefault();
     console.log("Hi");
 
-    const userData1 = data.filter(
-      (user1) => user1.email === email || user1.ip === dataip1.ip
-    );
+    const userData1 = data.filter((user1) => user1.email === email);
+    const userData3 = data.filter((user) => user.ip === dataip1[0].ip);
 
     console.log(userData1);
+    console.timeLog(userData3);
 
     if (name != "" || email != "" || designation != "" || password != "") {
       /* if (userData1.length > 0) {
