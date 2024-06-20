@@ -18,19 +18,10 @@ const LeaderboardR1 = (props) => {
         UpdatedData.push(data[2]);
         return UpdatedData;
       }
-    } else if (data[1].score === data[2].score) {
-      let UpdatedData = [];
-      UpdatedData.push(data[0]);
-      const UpdatedData1 = data.slice(1, 3).sort((a, b) => a.time - b.time);
-      UpdatedData.push(UpdatedData1[0]);
-      UpdatedData.push(UpdatedData1[1]);
-      return UpdatedData;
     }
   };
 
   const FinalResult = SortTime(Top3Data);
-
-  console.log(FinalResult);
 
   return (
     <>
