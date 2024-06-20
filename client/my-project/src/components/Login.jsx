@@ -133,15 +133,9 @@ const Login = () => {
               <img src="./VD11.png"></img>
             </div>
             <div className="formPart flex flex-col justify-center items-start w-[54vw]  h-[96vh]   font-roboto ">
-              {(show === "false" && (
-                <p className="text-center text-[12vmin] md:text-[10vmin] text-bodytext font-medium mt-[6vmin]">
-                  Log In...
-                </p>
-              )) || (
-                <p className="text-center text-[12vmin] md:text-[10vmin] text-bodytext font-medium mt-[6vmin]">
-                  Check Leaderboard...
-                </p>
-              )}
+              <p className="text-center text-[12vmin] md:text-[10vmin] text-bodytext font-medium mt-[6vmin]">
+                Log In...
+              </p>
 
               <div>
                 <form id="form" className="">
@@ -183,14 +177,12 @@ const Login = () => {
                       ></img>
                     </div>
 
-                    {show === "false" && (
-                      <input
-                        type="text"
-                        readOnly={true}
-                        className="bg-white rounded-[2.5vmin] flex space-x-2 w-[80vw] md:w-[77vmin] border-bodytext border-b-[4px] p-3"
-                        value={`Round  ${round}`}
-                      />
-                    )}
+                    <input
+                      type="text"
+                      readOnly={true}
+                      className="bg-white rounded-[2.5vmin] flex space-x-2 w-[80vw] md:w-[77vmin] border-bodytext border-b-[4px] p-3"
+                      value={`Round  ${round}`}
+                    />
                   </div>
                 </form>
 
@@ -235,15 +227,10 @@ const Login = () => {
                 ></img>
               </div>
 
-              {(show === "false" && (
-                <p className="text-[10vmin] md:text-[6vmin] text-bodytext font-medium mt-1">
-                  Log In...
-                </p>
-              )) || (
-                <p className="text-[10vmin] md:text-[6vmin] text-bodytext font-medium mt-1">
-                  Check Leaderboard...
-                </p>
-              )}
+              <p className="text-[10vmin] md:text-[6vmin] text-bodytext font-medium mt-1">
+                Check Leaderboard...
+              </p>
+
               <input
                 type="email"
                 placeholder="Enter your email..."
