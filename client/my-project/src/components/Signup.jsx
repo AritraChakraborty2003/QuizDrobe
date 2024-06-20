@@ -64,15 +64,12 @@ const Signup = () => {
     e.preventDefault();
     console.log("Hi");
 
-    const userData1 = data.filter((user1) => {
-      user1.email === email;
-    });
-    const userData2 = data.filter((user) => {
-      user.ip === dataip1.ip;
-    });
+    const userData1 = data.filter(
+      (user1) => user1.email === email || user1.ip === dataip1.ip
+    );
 
     console.log(userData1);
-    console.log(userData2);
+
     if (name != "" || email != "" || designation != "" || password != "") {
       /* if (userData1.length > 0) {
         alert("Already registered email");
