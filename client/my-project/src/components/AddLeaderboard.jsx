@@ -9,10 +9,9 @@ const AddLeaderboard = () => {
   const [show, setShow] = useState("");
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_APP_API_URL}` + "score")
+      .get(`${import.meta.env.VITE_APP_API_URL}` + "/score")
       .then((res) => {
         setData(res.data);
-        console.log(data);
       })
       .catch((err) => console.log(err));
 
@@ -85,7 +84,7 @@ const AddLeaderboard = () => {
                   </button>
                 </div>
               </form>
-              {show === "true" && (
+              {show === "true" && data.length > 0 && (
                 <button
                   className="bg-bodytext text-white p-3 mt-4"
                   onClick={() => {
