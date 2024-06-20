@@ -34,8 +34,6 @@ const Signup = () => {
       .get(`${import.meta.env.VITE_APP_API_URL}`)
       .then((res) => {
         setDataip1(res.data);
-
-        console.log(dataip1);
       })
       .catch((err) => {
         console.log(err);
@@ -64,17 +62,26 @@ const Signup = () => {
 
   const onSubmitHandle = (e) => {
     e.preventDefault();
+    console.log("Hi");
+
+    const userData1 = data.filter((user1) => user1.email === email);
+    const userData3 = data.filter((user) => user.ip === dataip1.ip);
+
     if (name != "" || email != "" || designation != "" || password != "") {
-      const userData1 = data.filter((user) => user.email === email);
-      /*const userData2 = data.filter((user) => {
+      const userData1 = data.filter((user) => {
+        user.email === email;
+      });
+      const userData2 = data.filter((user) => {
         user.ip === dataip1.ip;
       });
 
       console.log(userData1);
-      console.log(userData2);*/
+      console.log(userData2);
 
-      if (userData1.length > 0) {
+      /* if (userData1.length > 0) {
         alert("Already registered email");
+      } else if (userData2.length > 0) {
+        alert("Similar login ip detected with another email");
       } else {
         if (cnfPassword === password) {
           axios
