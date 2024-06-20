@@ -7,7 +7,7 @@ const LeaderboardR1 = (props) => {
   const Firstdata = data.filter((user) => user.round === 1);
   const ScoreData = Firstdata.sort((a, b) => b.score - a.score);
   const Top3Data = ScoreData.slice(0, 3);
-
+  /*
   const SortTime = (data) => {
     if (data[0].score === data[1].score) {
       if (data[2].score === data[0].score) {
@@ -19,9 +19,9 @@ const LeaderboardR1 = (props) => {
         return UpdatedData;
       }
     }
-  };
+  };*/
 
-  const FinalResult = SortTime(Top3Data);
+  const FinalResult = Top3Data;
 
   return (
     <>
