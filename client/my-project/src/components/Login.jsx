@@ -297,23 +297,13 @@ const Login = () => {
                 />
               )}
 
-              {(show === "false" && (
-                <button
-                  className="bg-black  bg-buttonColor flex justify-center items-center
+              <button
+                className="bg-black  bg-buttonColor flex justify-center items-center
               w-[70vw] md:w-[25vw] p-3 text-maintext font-medium rounded-2xl "
-                  onClick={onSubmitHandle}
-                >
-                  Login
-                </button>
-              )) || (
-                <button
-                  className="mt-7 lg:mt-5 bg-black  bg-bodytext flex justify-center items-center
-              w-[70vw] md:w-[20vw] p-3 text-white font-medium rounded-2xl "
-                  onClick={onSubmitHandle1}
-                >
-                  Leaderboard
-                </button>
-              )}
+                onClick={onSubmitHandle}
+              >
+                Login
+              </button>
 
               {show === false && (
                 <p className="text-bodytext font-medium mt-5">
