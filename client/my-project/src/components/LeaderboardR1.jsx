@@ -3,6 +3,7 @@
 /* eslint-disable no-unused-vars */
 
 const LeaderboardR1 = (props) => {
+  console.log(data);
   const data = props.data;
   const Firstdata = data.filter((user) => user.round === 1);
   const ScoreData = Firstdata.sort((a, b) => b.score - a.score);
