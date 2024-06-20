@@ -86,7 +86,6 @@ const AddLeaderboard = () => {
               </form>
               {show === "true" && data.length > 0 && (
                 <div>
-                  {data[0].name}
                   <button
                     className="bg-bodytext text-white p-3 mt-4"
                     onClick={() => {
