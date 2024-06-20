@@ -23,6 +23,8 @@ const LeaderboardR1 = (props) => {
 
   const FinalResult = Top3Data;
 
+  console.log(FinalResult);
+
   return (
     <>
       <div className="displayArea flex flex-col gap-y-4 lg:mt-3">

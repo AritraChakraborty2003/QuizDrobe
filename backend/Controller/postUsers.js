@@ -4,6 +4,7 @@ const postUser = () => {
     const name = req.body.name;
     const email = req.body.email;
     const institute = req.body.institute;
+    const round = req.body.round;
     const password = req.body.password;
     const oScore = req.body.oScore;
 
@@ -11,6 +12,7 @@ const postUser = () => {
       name: name,
       email: email,
       institute: institute,
+      round: round,
       password: password,
       oScore: oScore,
     });

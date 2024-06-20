@@ -1,11 +1,13 @@
 /* eslint-disable react/prop-types */
 const LeaderboardOverall = (props) => {
   const data = props.odata;
-  const Firstdata = data.filter((user) => user.round === 1);
-  const ScoreData = Firstdata.sort((a, b) => b.score - a.score);
+  console.log(data);
+  const ScoreData = data.sort((a, b) => b.oScore - a.oScore);
   const Top3Data = ScoreData.slice(0, 3);
 
   const FinalResult = Top3Data;
+
+  console.log(FinalResult);
 
   return (
     <>
@@ -38,8 +40,7 @@ const LeaderboardOverall = (props) => {
                 </div>
 
                 <li className="flex gap-x-4 ">
-                  Score: {FinalResult[0].score} /50
-                  <li>Time: {FinalResult[0].time}s</li>
+                  Score: {FinalResult[0].oScore}/300
                 </li>
               </ul>
             </div>
@@ -69,8 +70,7 @@ const LeaderboardOverall = (props) => {
                 </div>
 
                 <li className="flex gap-x-4 ">
-                  Score: {FinalResult[1].score} /50
-                  <li>Time: {FinalResult[1].time}s</li>
+                  Score: {FinalResult[1].oScore}/300
                 </li>
               </ul>
             </div>
@@ -100,8 +100,7 @@ const LeaderboardOverall = (props) => {
                 </div>
 
                 <li className="flex gap-x-4 ">
-                  Score: {FinalResult[2].score} /50
-                  <li>Time: {FinalResult[2].time}s</li>
+                  Score: {FinalResult[2].oScore}/300
                 </li>
               </ul>
             </div>

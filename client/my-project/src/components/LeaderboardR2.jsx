@@ -5,25 +5,7 @@ const LeaderboardR2 = (props) => {
   const ScoreData = Firstdata.sort((a, b) => b.score - a.score);
   const Top3Data = ScoreData.slice(0, 3);
 
-  const SortTime = (data) => {
-    if (data[0].score === data[1].score) {
-      if (data[2].score === data[0].score) {
-        const UpdatedData = data.sort((a, b) => a.time - b.time);
-        return UpdatedData;
-      } else {
-        let UpdatedData = data.slice(0, 2).sort((a, b) => a.time - b.time);
-        UpdatedData.push(data[2]);
-        return UpdatedData;
-      }
-    } else if (data[1].score === data[2].score) {
-      let UpdatedData = [];
-      UpdatedData.push(data[0]);
-      UpdatedData = data.slice(1, 3).sort((a, b) => a.time - b.time);
-      return UpdatedData;
-    }
-  };
-
-  const FinalResult = SortTime(Top3Data);
+  const FinalResult = Top3Data;
 
   console.log(FinalResult);
   return (
