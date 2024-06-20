@@ -7,8 +7,8 @@ const LeaderboardR1 = (props) => {
   const Firstdata = data.filter((user) => user.round === 1);
   const ScoreData = Firstdata.sort((a, b) => b.score - a.score);
   const Top3Data = ScoreData.slice(0, 3);
-  /*
-  const SortTime = (data) => {
+
+  /* const SortTime = (data) => {
     if (data[0].score === data[1].score) {
       if (data[2].score === data[0].score) {
         const UpdatedData = data.sort((a, b) => a.time - b.time);
@@ -22,7 +22,6 @@ const LeaderboardR1 = (props) => {
   };*/
 
   const FinalResult = Top3Data;
-  console.log(data);
 
   return (
     <>
@@ -55,7 +54,6 @@ const LeaderboardR1 = (props) => {
 
                 <li className="flex gap-x-4 ">
                   Score: {FinalResult[0].score} /50
-                  <li>Time: {FinalResult[0].time}s</li>
                 </li>
               </ul>
             </div>
@@ -86,7 +84,6 @@ const LeaderboardR1 = (props) => {
 
                 <li className="flex gap-x-4 ">
                   Score: {FinalResult[1].score} /50
-                  <li>Time: {FinalResult[1].time}s</li>
                 </li>
               </ul>
             </div>
@@ -117,7 +114,6 @@ const LeaderboardR1 = (props) => {
 
                 <li className="flex gap-x-4 ">
                   Score: {FinalResult[2].score} /50
-                  <li>Time: {FinalResult[2].time}s</li>
                 </li>
               </ul>
             </div>
