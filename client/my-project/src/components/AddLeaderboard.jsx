@@ -12,6 +12,7 @@ const AddLeaderboard = () => {
       .get(`${import.meta.env.VITE_APP_API_URL}` + "score")
       .then((res) => {
         setData(res.data);
+        console.log(data);
       })
       .catch((err) => console.log(err));
 
