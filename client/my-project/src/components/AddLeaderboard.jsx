@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 const AddLeaderboard = () => {
   const [data, setData] = useState([]);
+  const [odata, setOData] = useState([]);
   const [show, setShow] = useState("");
   useEffect(() => {
     axios
@@ -41,6 +42,7 @@ const AddLeaderboard = () => {
         console.log(err);
       });
   };
+
   return (
     <>
       {(localStorage.getItem("loggedinadmin") === "true" &&
@@ -87,7 +89,7 @@ const AddLeaderboard = () => {
                   className="bg-bodytext text-white p-3 mt-4"
                   onClick={() => {
                     navigate("/LeaderboardLobby", {
-                      state: { data: data },
+                      state: { data: data, odata: odata },
                     });
                   }}
                 >

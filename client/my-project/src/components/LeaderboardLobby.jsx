@@ -11,6 +11,7 @@ const LeaderboardLobby = () => {
   const [choice, setChoice] = useState(1);
 
   const data = location.state.data;
+  const odata = location.state.odata;
 
   return (
     <>
@@ -98,7 +99,9 @@ const LeaderboardLobby = () => {
             {(choice == 1 && <LeaderboardR1 data={data} />) ||
               (choice === 2 && <LeaderboardR2 data={data} />) ||
               (choice === 3 && <LeaderboardR3 data={data} />) ||
-              (choice === 6 && <LeaderboardOverall data={data} />)}
+              (choice === 6 && (
+                <LeaderboardOverall data={data} odata={odata} />
+              ))}
           </div>
         )) || (
           <div className="mainDisplay bg-backQuiz   w-[100vw] flex flex-col gap-4 items-center pb-2">
@@ -175,7 +178,9 @@ const LeaderboardLobby = () => {
             {(choice == 1 && <LeaderboardR1 data={data} />) ||
               (choice === 2 && <LeaderboardR2 data={data} />) ||
               (choice === 3 && <LeaderboardR3 data={data} />) ||
-              (choice === 6 && <LeaderboardOverall data={data} />)}
+              (choice === 6 && (
+                <LeaderboardOverall data={data} odata={odata} />
+              ))}
           </div>
         )}
       </div>

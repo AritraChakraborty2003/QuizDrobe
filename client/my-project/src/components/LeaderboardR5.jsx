@@ -1,7 +1,4 @@
-/* eslint-disable react/prop-types */
-const LeaderboardOverall = (props) => {
-  const data = props.odata;
-  console.log(data);
+const LeaderboardR5 = () => {
   return (
     <>
       <div className="displayArea flex flex-col gap-y-4 lg:mt-3">
@@ -46,7 +43,7 @@ const LeaderboardOverall = (props) => {
           </div>
           <div className="textArea w-[70vmin] lg:w-[90vmin] lg:mt-6">
             <ul className="text-[4vmin] lg:text-[3vmin] font-medium">
-              <li className="text-[4.25vmin] lg:text-[3.25vmin]  font-bold">
+              <li className="text-[4.25vmin] lg:text-[3.25vmin] font-bold">
                 Name: Akash Gupta
               </li>
               <li>Email: gupta.akash123@gmail.com</li>
@@ -104,4 +101,4 @@ const LeaderboardOverall = (props) => {
     </>
   );
 };
-export default LeaderboardOverall;
+export default LeaderboardR5;

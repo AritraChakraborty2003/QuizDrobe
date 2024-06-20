@@ -52,7 +52,7 @@ const AddLeaderboardLogin = () => {
             <div className="formPart flex flex-col justify-center items-start w-[54vw]  h-[96vh]   font-roboto ">
               <div className="flex flex-col justify-center items-center">
                 <p className="text-[10vmin] md:text-[6vmin] text-bodytext font-medium mt-1">
-                  Super User Log In...{" "}
+                  Super Log In...{" "}
                   <span className="text-[2.45vmin]">
                     ( For admin purposes only )
                   </span>

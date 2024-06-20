@@ -65,9 +65,7 @@ const Signup = () => {
   const onSubmitHandle = (e) => {
     e.preventDefault();
     if (name != "" || email != "" || designation != "" || password != "") {
-      const userData1 = data.filter((user) => {
-        user.email === email;
-      });
+      const userData1 = data.filter((user) => user.email === email);
       /*const userData2 = data.filter((user) => {
         user.ip === dataip1.ip;
       });
