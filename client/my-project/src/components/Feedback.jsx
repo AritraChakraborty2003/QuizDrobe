@@ -30,8 +30,8 @@ const Feedback = () => {
       const test1 = document.getElementById("test1").value;
       const testp = document.getElementById("testp").value;
 
-      if (rating === 0 || rating1 === 0 || test1 === "" || testp === "") {
-        alert("All fields must be filled to proceed");
+      if (rating === 0 || rating1 === 0) {
+        alert("Ratings fields must be filled to proceed");
       } else {
         axios
           .post(`${import.meta.env.VITE_APP_API_URL}` + "feedback", {
