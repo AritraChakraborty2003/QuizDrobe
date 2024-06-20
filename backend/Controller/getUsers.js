@@ -3,10 +3,8 @@ import geoip from "geoip-lite";
 const generateRandom = (req, res) => {
   const myObj = {
     name: "Welcome",
-    ip: req.ip,
   };
-  console.log(geoip.lookup(req.ip));
-  res.end(JSON.stringify(myObj));
+  console.log(JSON.stringify(myObj));
 };
 function getUsers(req, res) {
   users

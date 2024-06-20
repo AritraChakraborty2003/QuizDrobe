@@ -17,9 +17,8 @@ import AddLeaderboard from "./components/AddLeaderboard";
 import LeaderboardLobby from "./components/LeaderboardLobby";
 import LeaderboardR2 from "./components/LeaderboardR2";
 import LeaderboardR3 from "./components/LeaderboardR3";
-import LeaderboardR4 from "./components/LeaderboardR4";
-import LeaderboardR5 from "./components/LeaderboardR5";
 import LeaderboardOverall from "./components/LeaderboardOverall";
+import AddLeaderboardLogin from "./components/AddLeaderBoardLogin";
 function App() {
   return (
     <>
@@ -45,8 +44,10 @@ function App() {
           <Route path="/LeaderboardR1" element={<LeaderboardR1 />}></Route>
           <Route path="/LeaderboardR2" element={<LeaderboardR2 />}></Route>
           <Route path="/LeaderboardR3" element={<LeaderboardR3 />}></Route>
-          <Route path="/LeaderboardR4" element={<LeaderboardR4 />}></Route>
-          <Route path="/LeaderboardR5" element={<LeaderboardR5 />}></Route>
+          <Route
+            path="/AddLeaderboardLogin"
+            element={<AddLeaderboardLogin />}
+          ></Route>
           <Route
             path="/LeaderboarOverall"
             element={<LeaderboardOverall />}

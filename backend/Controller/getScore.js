@@ -19,6 +19,14 @@ const getScoreId = (req, res) => {
         res.json(user);
       })
       .catch((err) => console.log(err));
+  } else if (req.query.email === undefined) {
+    console.log(req.query.round);
+    scores
+      .find({ round: req.query.round })
+      .then((val) => {
+        res.json(val);
+      })
+      .catch((err) => console.log(err));
   } else {
     scores
       .findOne({ email: req.query.email, round: req.query.round })

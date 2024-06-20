@@ -31,7 +31,7 @@ const Signup = () => {
       });
 
     axios
-      .get(`https://api.venturedrobe.online/`)
+      .get(`${import.meta.env.VITE_APP_API_URL}`)
       .then((res) => {
         setDataip1(res.data);
 
@@ -65,20 +65,16 @@ const Signup = () => {
   const onSubmitHandle = (e) => {
     e.preventDefault();
     if (name != "" || email != "" || designation != "" || password != "") {
-      const userData1 = data.filter((user) => {
-        user.email === email;
-      });
-      const userData2 = data.filter((user) => {
+      const userData1 = data.filter((user) => user.email === email);
+      /*const userData2 = data.filter((user) => {
         user.ip === dataip1.ip;
       });
 
       console.log(userData1);
-      console.log(userData2);
+      console.log(userData2);*/
 
-      /* if (userData1.length > 0) {
+      if (userData1.length > 0) {
         alert("Already registered email");
-      } else if (userData2.length > 0) {
-        alert("Similar login ip detected with another email");
       } else {
         if (cnfPassword === password) {
           axios
@@ -106,7 +102,7 @@ const Signup = () => {
         }
       }
     } else {
-      alert("All fields are mandatory to fill");*/
+      alert("All fields are mandatory to fill");
     }
   };
 

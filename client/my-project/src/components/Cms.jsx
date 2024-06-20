@@ -82,7 +82,7 @@ const Cms = () => {
                   </div>
                 </div>
 
-                <div className="card h-[50vmin] w-[60vmin] bg-white">
+                <div className="card  w-[60vmin] bg-white p-2">
                   <div className="card h-[50vmin] w-[60vmin] bg-white flex flex-col justify-center items-center">
                     <div className="imageHolder h-[40vmin] w-[50vmin] flex justify-center items-center bg-white">
                       <img
@@ -93,7 +93,7 @@ const Cms = () => {
                     <button
                       className="bg-bodytext text-white p-2 mt-2"
                       onClick={() => {
-                        navigate("/AddLeaderboard");
+                        navigate("/AddLeaderboardLogin");
                       }}
                     >
                       Add Leaderboard

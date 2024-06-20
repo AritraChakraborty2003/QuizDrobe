@@ -16,6 +16,7 @@ import { leaderboardRouter } from "./Routes/leaderBoardRouter.js";
 import requestIp from "request-ip";
 import geoip from "geoip-lite";
 import { isIPv6 } from "net";
+import { IPRouter } from "./Routes/IPRouter.js";
 /* For Middlewares and dotenv config */
 dotenv.config();
 const app = express();
@@ -30,6 +31,7 @@ app.use(logResReq("log.txt"));
 
 /* For HTTP Requests from client*/
 app.use("/", genRouter);
+app.use("/api/", IPRouter);
 app.use("/api/users", userRouter);
 app.use("/api/questions", questionsRouter);
 app.use("/api/admin", adminRouter);

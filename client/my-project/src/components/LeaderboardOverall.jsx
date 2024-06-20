@@ -1,4 +1,7 @@
-const LeaderboardOverall = () => {
+/* eslint-disable react/prop-types */
+const LeaderboardOverall = (props) => {
+  const data = props.data;
+  console.log(data);
   return (
     <>
       <div className="displayArea flex flex-col gap-y-4 lg:mt-3">

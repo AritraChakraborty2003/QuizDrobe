@@ -1,22 +1,24 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import LeaderboardR1 from "./LeaderboardR1";
 import LeaderboardR2 from "./LeaderboardR2";
 import LeaderboardR3 from "./LeaderboardR3";
-import LeaderboardR4 from "./LeaderboardR4";
-import LeaderboardR5 from "./LeaderboardR5";
 import LeaderboardOverall from "./LeaderboardOverall";
 import { useState } from "react";
 
 const LeaderboardLobby = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [choice, setChoice] = useState(1);
+
+  const data = location.state.data;
+
   return (
     <>
       <div className="bg-backQuiz font-poppins">
         <button
           className="p-2 text-black bg-white ml-2 mt-2"
           onClick={() => {
-            navigate("/");
+            navigate("/AddLeaderboard");
           }}
         >
           Back
@@ -77,32 +79,7 @@ const LeaderboardLobby = () => {
                   <div className="underline h-5 border-bodytext border-t-4 lg:border-t-8 w-30 pt-2"></div>
                 )}
               </div>
-              <div
-                className="holder pb-2"
-                onClick={() => {
-                  setChoice(4);
-                }}
-              >
-                Round 4{" "}
-                {(choice === 4 && (
-                  <div className="underline h-5 border-[#000] border-t-4 lg:border-t-8 w-30 pt-2"></div>
-                )) || (
-                  <div className="underline h-5 border-bodytext border-t-4 lg:border-t-8 w-30 pt-2"></div>
-                )}
-              </div>
-              <div
-                className="holder pb-2"
-                onClick={() => {
-                  setChoice(5);
-                }}
-              >
-                Round 5{" "}
-                {(choice === 5 && (
-                  <div className="underline h-5 border-[#000] border-t-4 lg:border-t-8 w-30 pt-2"></div>
-                )) || (
-                  <div className="underline h-5 border-bodytext border-t-4 lg:border-t-8 w-30 pt-2"></div>
-                )}
-              </div>
+
               <div
                 className="holder pb-2"
                 onClick={() => {
@@ -118,12 +95,10 @@ const LeaderboardLobby = () => {
               </div>
             </div>
 
-            {(choice == 1 && <LeaderboardR1 />) ||
-              (choice === 2 && <LeaderboardR2 />) ||
-              (choice === 3 && <LeaderboardR3 />) ||
-              (choice === 4 && <LeaderboardR4 />) ||
-              (choice === 5 && <LeaderboardR5 />) ||
-              (choice === 6 && <LeaderboardOverall />)}
+            {(choice == 1 && <LeaderboardR1 data={data} />) ||
+              (choice === 2 && <LeaderboardR2 data={data} />) ||
+              (choice === 3 && <LeaderboardR3 data={data} />) ||
+              (choice === 6 && <LeaderboardOverall data={data} />)}
           </div>
         )) || (
           <div className="mainDisplay bg-backQuiz   w-[100vw] flex flex-col gap-4 items-center pb-2">
@@ -132,7 +107,7 @@ const LeaderboardLobby = () => {
                 Leaderboard
               </p>
               <div className="holder">
-                <div className="imgHolder flex h-[15vmin] w-[30vmin] items-center ">
+                <div className="imgHolder flex h-[15vmin] w-[30vmin] items-center overflow-hidden ">
                   <img
                     src="./VDIcon1.png"
                     alt=""
@@ -141,7 +116,7 @@ const LeaderboardLobby = () => {
                 </div>
               </div>
             </div>
-            <div className="choiceArea w-[100vw] pb-2 flex flex-wrap justify-center items-center text-[5vmin] lg:text-[4.35vmin]  gap-x-7  lg:gap-x-12 2xl:gap-x-[8vmin] font-roboto">
+            <div className="choiceArea w-[100vw] pb-2 flex flex-wrap justify-center items-center text-[5vmin] lg:text-[4.35vmin]  gap-x-7  lg:gap-x-12 2xl:gap-x-[13vmin] font-roboto">
               <div
                 className="holder pb-2"
                 onClick={() => {
@@ -181,32 +156,7 @@ const LeaderboardLobby = () => {
                   <div className="underline h-5 border-bodytext border-t-4 lg:border-t-8 w-30 pt-2"></div>
                 )}
               </div>
-              <div
-                className="holder pb-2"
-                onClick={() => {
-                  setChoice(4);
-                }}
-              >
-                Round 4{" "}
-                {(choice === 4 && (
-                  <div className="underline h-5 border-[#000] border-t-4 lg:border-t-8 w-30 pt-2"></div>
-                )) || (
-                  <div className="underline h-5 border-bodytext border-t-4 lg:border-t-8 w-30 pt-2"></div>
-                )}
-              </div>
-              <div
-                className="holder pb-2"
-                onClick={() => {
-                  setChoice(5);
-                }}
-              >
-                Round 5{" "}
-                {(choice === 5 && (
-                  <div className="underline h-5 border-[#000] border-t-4 lg:border-t-8 w-30 pt-2"></div>
-                )) || (
-                  <div className="underline h-5 border-bodytext border-t-4 lg:border-t-8 w-30 pt-2"></div>
-                )}
-              </div>
+
               <div
                 className="holder pb-2"
                 onClick={() => {
@@ -222,12 +172,10 @@ const LeaderboardLobby = () => {
               </div>
             </div>
 
-            {(choice == 1 && <LeaderboardR1 />) ||
-              (choice === 2 && <LeaderboardR2 />) ||
-              (choice === 3 && <LeaderboardR3 />) ||
-              (choice === 4 && <LeaderboardR4 />) ||
-              (choice === 5 && <LeaderboardR5 />) ||
-              (choice === 6 && <LeaderboardOverall />)}
+            {(choice == 1 && <LeaderboardR1 data={data} />) ||
+              (choice === 2 && <LeaderboardR2 data={data} />) ||
+              (choice === 3 && <LeaderboardR3 data={data} />) ||
+              (choice === 6 && <LeaderboardOverall data={data} />)}
           </div>
         )}
       </div>
