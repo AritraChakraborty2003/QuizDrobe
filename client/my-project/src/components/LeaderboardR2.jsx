@@ -39,7 +39,6 @@ const LeaderboardR2 = (props) => {
 
                 <li className="flex gap-x-4 ">
                   Score: {FinalResult[0].score} /50
-                  <li>Time: {FinalResult[0].time}s</li>
                 </li>
               </ul>
             </div>
@@ -70,7 +69,6 @@ const LeaderboardR2 = (props) => {
 
                 <li className="flex gap-x-4 ">
                   Score: {FinalResult[1].score} /50
-                  <li>Time: {FinalResult[1].time}s</li>
                 </li>
               </ul>
             </div>
@@ -101,7 +99,6 @@ const LeaderboardR2 = (props) => {
 
                 <li className="flex gap-x-4 ">
                   Score: {FinalResult[2].score} /50
-                  <li>Time: {FinalResult[2].time}s</li>
                 </li>
               </ul>
             </div>
