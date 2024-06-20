@@ -65,7 +65,7 @@ const Signup = () => {
     console.log("Hi");
 
     const userData1 = data.filter((user1) => user1.email === email);
-    const userData3 = data.filter((user) => user.ip === dataip1[0].ip);
+    const userData3 = data.filter((user) => user.ip === dataip1.ip);
 
     console.log(userData1);
     console.timeLog(userData3);
