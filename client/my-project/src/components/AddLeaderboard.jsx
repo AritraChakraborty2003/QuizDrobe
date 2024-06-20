@@ -9,6 +9,14 @@ const AddLeaderboard = () => {
   const [show, setShow] = useState("");
   useEffect(() => {
     axios
+      .get(`${import.meta.env.VITE_APP_API_URL}` + "users")
+      .then((res) => {
+        setOData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    axios
       .get(`${import.meta.env.VITE_APP_API_URL}` + "score")
       .then((res) => {
         setData(res.data);
